@@ -1,0 +1,315 @@
+@import "compass/reset";
+@import "compass/css3";
+
+/* VARIABLES */
+
+$orange: #f1b603;
+
+$green: #89bc32;
+$dark_green: #75a22b;
+
+$red: #903742;
+$dark_red: #b14242;
+
+// $gray: ;
+$dark_gray: #dbdcdd;
+
+$background_color: #f4f5f6;
+
+$font_main_color: #555555;
+$secondary_font_color: #7f7f7f;
+
+$light_gray: #e6e6e6;
+
+
+/* VARIABLES END */
+
+
+/* MIXINS */
+@mixin master_transition {
+	@include transition-property(all);
+	@include transition-duration(0.3s);
+}
+
+@mixin delayed_transition {
+	@include transition-property(all);
+	@include transition-duration(0.3s);
+	@include transition-delay(1s);
+}
+
+@mixin sizing {
+	@include box-sizing(border-box);
+}
+/* MIXINS END */
+
+
+/* CLEARFIX */
+.clearfix {
+	zoom:1;
+	&:before, &:after {
+		content: "\0020"; 
+		display: block; 
+		height: 0; 
+		overflow: hidden; 
+	}
+	&:after {
+		clear: both;
+	}
+}
+/* CLEARFIX END */
+
+
+/* RESETS */
+html, body{	
+	height:100%;
+}
+
+body {
+	font-family: 'Arimo', Helvetica, sans-serif;
+	font-size: 62.5%;
+}
+
+* {
+	outline: none;
+}
+
+input, input::-moz-focus-inner {
+	border: none;
+}
+
+input {
+	-webkit-appearance: none;
+	@include border-radius(0);
+	border: none;
+}
+
+input:focus, textarea:focus, input:focus::-moz-focus-inner {
+	outline: none;
+	border: none;
+}
+/* RESETS END */
+
+.rounded {
+	@include border-radius(4px);
+}
+
+.rounded-big {
+	@include border-radius(6px);
+}
+
+/* BUTTONS */
+.btn {
+	@extend .rounded;
+	@include sizing;
+	@include master_transition;
+	padding: 6px 10px;
+	border: 2px solid;
+	font-size: 1.4em;
+	cursor: pointer;
+	text-align: center;
+	color: #ffffff;
+}
+
+.btn-wide {
+	padding: 6px 15px;
+}
+
+.btn-apply {
+	background: $green;
+	border-color: $dark_green;
+
+	&:hover {
+		background: #ffffff;
+		color: $green;
+	}
+}
+
+.btn-deny {
+	background: $red;
+	border-color: $dark_green;
+
+	&:hover {
+		background: #ffffff;
+		color: $red;
+	}
+}
+/* BUTTONS END */
+
+/* INPUTS */
+.input {
+	@include sizing;
+	@include master_transition;
+	padding: 8px;
+	font-size: 1.4em;
+	text-align: center;
+	margin: 0px;
+	border: 1px solid $dark_gray;
+
+
+	&:focus {
+		border: 1px solid $green;
+	}
+}
+
+.input-error {
+	border: 1px solid $red;
+	
+	&:focus {
+		border: 1px solid $dark_red;
+	}
+}
+/* INPUTS END */
+
+.form-list {
+
+	li {
+		margin-bottom: 10px;
+
+		&:last-child {
+			margin-bottom: 0px;
+		}
+	}
+}
+
+/* LOGIN SCREEN */
+#login {
+	width: 100%;
+	height: 100%;
+	display: block;
+	background: $background_color;
+
+	> div {
+		@include sizing;
+		width: 100%;
+		height: 500px;
+		display: block;
+		padding-top: 100px;
+		text-align: center;
+	}
+
+	.tabs_navigation {
+		display: inline-block;
+		text-align: center;
+		margin: 0 auto;
+
+		li {
+			margin: 0 25px -3px 0;
+
+			&:last-child {
+				margin-right: 0px;
+			}
+		}
+
+		a {
+			padding: 0 25px;
+		}
+	}
+
+	.select-user {
+		margin-top: 30px;
+
+		li {
+			display: inline-block;
+			white-space: nowrap;
+			height: 120px;
+
+			a {
+				display: inline-block;
+				vertical-align: middle;
+				white-space: nowrap;
+				overflow: hidden;
+				@include border-radius(100px);
+				height: 120px;
+				margin: 0 25px;
+			}
+
+			.select-user-align {
+				display: inline-block;
+				vertical-align: middle;
+				height: 100%;
+			}
+		}
+	}
+
+	form {
+		background: url(../images/user_menu_background.jpg);
+		width: 350px;
+		margin: 25px auto 0;
+		padding: 10px;
+		overflow: hidden;
+		@include opacity(0);
+
+		&#user_switch {
+			@include opacity(1);
+		}
+
+		input[type="text"], input[type="password"] {
+			width: 100%;
+		}
+
+		input[type="submit"] {
+			float: right;
+			width: 100px;
+		}
+
+		a {
+			text-decoration: none;
+			font-size: 1.3em;
+			color: #ffffff;
+			float: right;
+			margin: 12px 12px 0 0;
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+}
+/* LOGIN SCREEN END */
+
+/* TABS */
+.tabs_navigation {
+	@extend .clearfix;
+	border-bottom: 3px solid $light_gray;
+
+	li {
+		float: left;
+		margin: 0 10px -3px 0;
+	}
+
+	a {
+		text-decoration: none;
+		color: $secondary_font_color;
+		border-bottom: 3px solid transparent;
+		font-size: 1.8em;
+		line-height: 2.5em;
+		height: 44px;
+		padding: 0 15px;
+		display: block;
+		@include master_transition;
+
+		&.active, &:hover {
+			color: $font_main_color;
+			border-bottom: 3px solid $orange;
+		}
+	}
+}
+
+.tabs {
+	overflow: hidden;
+	position: relative;
+
+	> li {
+		position: absolute;
+		left: 0px;
+		top: 0px;
+		display: none;
+		width: 100%;
+
+		&.active_tab {
+			position: relative;
+			display: block;
+		}
+	}
+}
+/* TABS END */

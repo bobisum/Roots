@@ -1,0 +1,1158 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Roots - Admin theme</title>
+  <meta name="description" content="">
+
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="css/screen.css">
+  <!--[if lte IE 8]>
+    <link rel="stylesheet" type="text/css" href="css/screenie8.css" />
+    <script src="js/css3-mediaqueries.js" type="text/javascript"></script>
+    <style type="text/css">
+        #breadcrumbContainer select { display: inline !important; width:100%; margin-top:4px;}
+        #breadcrumbContainer dl { display: none !important; }
+    </style>
+  <![endif]-->
+  <link rel="stylesheet" href="css/lightbox.css" type="text/css" media="screen" />
+  <link rel="stylesheet" href="css/jquery_ui/jquery.ui.all.css">
+  <link href='http://fonts.googleapis.com/css?family=Arimo:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+
+   <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+     <script src="js/html5shiv.js" type="text/javascript"></script>
+    <![endif]-->
+  
+  <script src="js/selectivizr-min.js" type="text/javascript"></script>
+
+</head>
+<body>
+  <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+<div class="sidebar cf"><!--Sidebar content-->  
+
+  <div id="user_id" class="cf">
+    <div id="user_idCenter">
+        <div class="photoContainer">
+            <div class="photoContainerBackground"></div>
+            <img src="images/user.png" alt="" class="photoPhoto">
+        </div>
+        <div id="name">
+            <p>John Doe</p>
+            <a href="index.html">Logout</a>
+        </div>
+    </div>
+  </div>
+
+  <nav id="menu" class="cf">
+    <div class="helperDiv cf">
+        <a href="#chartsContent" class="menuItem">Charts</a>
+        <a href="#tableContent" class="menuItem">Table</a>
+        <a href="#formContent" class="menuItem">Form</a>
+        <a href="#contentContent" class="menuItem">Content</a>
+        <a href="#tabsContent" class="menuItem">Tabs</a>
+        <a href="#galleryContent" class="menuItem">Gallery</a>
+    </div>
+  </nav>
+
+</div>
+<div class="content"><!--Body content-->
+    
+    <div class="infoField">
+        <div id="breadcrumbContainer">
+            <ul id="breadcrumbs"><!-- BREADCRUMBS -->
+                <li><a href="" >Breadcrumb 1</a></li>
+                <li><a href="" >Breadcrumb 2</a></li>
+                <li><a href="" >Breadcrumb 3</a></li>
+            </ul><!-- BREADCRUMBS END -->
+        </div>
+        <div id="searchFiled">
+            <form method="get" action="/search">
+            <input name="searchField" type="text" size="40" placeholder="Search..." />
+            </form>
+        </div>
+    </div>
+
+  <div class="contents cf">
+
+    <!-- CHARTS -->
+    <h2 class="contentHeading"><a id="chartsContent">Charts</a></h2>
+    <section class="chartSection">
+        <div id="chart-line" style="width:100%;height:300px"></div>
+    </section>
+    <!-- CHARTS END -->
+
+    <!-- TABLE -->
+    <h2 class="contentHeading"><a id="tableContent">Table</a></h2>
+    <section class="tableSection">
+        <table class="bordered" id="borderedTableSorter">
+
+            <thead>
+            <tr>
+                <th class="tableCheckBox"><p class="checkers">
+                    <input type="checkbox" id="sa_borderedCheckbox" name="sa_borderedCheckbox" data-checkbox-name="borderedCheckbox" class="selectall"/><label for="sa_borderedCheckbox"></label></p></th>
+                <th class="tableDate"><span class="tableHeadHeaders">Date</span><span class="sorterPicture"></span></th>
+                <th class="tableUser"><span class="tableHeadHeaders">User</span><span class="sorterPicture"></span></th>
+                <th class="tableContentAction" colspan="2"><span class="tableHeadHeaders">Content</span><span class="sorterPicture"></span></th>
+            </tr>
+            </thead>
+
+            <tfoot>
+            <tr>
+                <td colspan="5">
+                    <div id="table_footer">
+                        <div id="footerAction" class="cf">
+                            <select data-placeholder="Choose an action..." class="chzn-select customSelect" style="width:200px;" tabindex="2" id="tableSelect">
+                              <option value="Choose an action...">Choose an action...</option> 
+                              <option value="Edit">Edit</option> 
+                              <option value="Publish">Publish</option> 
+                              <option value="Delete all selected">Delete all selected</option>
+                            </select>
+                            <ul id="actionButtons">
+                                <li><a href="" class="buttonAction apply">Apply</a></li>
+                                <li><a href="" class="buttonAction delete">Delete</a></li>
+                            </ul>
+                            <ul id="pager">
+                                <li><a href="">◄</a></li>
+                                <li><a href="" class="activePage">1</a></li>
+                                <li><a href="">2</a></li>
+                                <li><a href="">3</a></li>
+                                <li><a href="">►</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            </tfoot>
+
+            <tr>
+                <td>
+                    <p class="checkers">
+                        <input type="checkbox" id="borderedCheckbox_0" name="borderedCheckbox" value="0" data-select-all="sa_borderedCheckbox" class="checkme" />
+                        <label for="borderedCheckbox_0"></label></p></td>  
+                <td>05.08.2012</td>
+                <td>
+                    <img src="images/author_1.jpg" alt="" class="authorPhotoPhoto">
+                    <span class="author">
+                        Javier Clear
+                    </span>
+                </td>     
+                <td><p>"There go two daft ones now," muttered the old Manxman. "One daft with strength, the other daft with weakness. But here's the end of the rotten line&mdash;all dripping, too. Mend it, eh? I think we had best have a new line altogether. I'll see Mr. Stubb about it."</p></td>
+                <td><a href="" class="popupBtn">Delete</a></td>
+            </tr>        
+            <tr>
+                <td><p class="checkers"><input type="checkbox" id="borderedCheckbox_1" name="borderedCheckbox" value="1" data-select-all="sa_borderedCheckbox" class="checkme" /><label for="borderedCheckbox_1"></label></p></td> 
+                <td>07.08.2012</td>
+                <td>
+                    <img src="images/author_1.jpg" alt="" class="authorPhotoPhoto">
+                    <span class="author">
+                        Fernando Welte
+                    </span>
+                </td>        
+                <td><p>The three boys were now hard at it; and quite a knocking and hammering  arose, in which Granser babbled on unnoticed. "You are true savages. Already has begun the custom of wearing human teeth.</p></td>
+                <td><a href="" class="popupBtn">Delete</a></td>
+            </tr>
+            <tr>
+
+                <td><p class="checkers"><input type="checkbox" id="borderedCheckbox_2" name="borderedCheckbox" value="2" data-select-all="sa_borderedCheckbox" class="checkme" /><label for="borderedCheckbox_2"></label></p></td>  
+                <td>09.08.2012</td>
+                <td>
+                    <img src="images/author_3.jpg" alt="" class="authorPhotoPhoto">
+                    <span class="author">
+                        Darren Blau
+                    </span>
+                </td>       
+                <td><p>Thus speak of the whale, the great Cuvier, and John Hunter, and Lesson, those lights of zoology and anatomy.</p></td>
+                <td><a href="" class="popupBtn">Delete</a></td>
+            </tr>    
+            <tr>
+                <td><p class="checkers"><input type="checkbox" id="borderedCheckbox_3" name="borderedCheckbox" value="3" data-select-all="sa_borderedCheckbox" class="checkme" /><label for="borderedCheckbox_3"></label></p></td> 
+                <td>09.08.2012</td>
+                <td>
+                    <img src="images/author_4.jpg" alt="" class="authorPhotoPhoto">
+                    <span class="author">
+                        Christian Talcott
+                    </span>
+                </td>
+                <td><p>"Is Bombay far from here?" asked Passepartout. "Pretty far.  It is a ten days' voyage by sea." "And in what country is Bombay?" "India." "In Asia?" "Certainly." "The deuce!  I was going to tell you there's one thing that worries me&mdash;my burner!" "What burner?" "My gas-burner, which I forgot to turn off, and which is at this moment burning at my expense.</p></td>
+                <td><a href="" class="popupBtn">Delete</a></td>
+
+            </tr>
+            <tr>
+                <td><p class="checkers"><input type="checkbox" id="borderedCheckbox_4" name="borderedCheckbox" value="4" data-select-all="sa_borderedCheckbox" class="checkme" /><label for="borderedCheckbox_4"></label></p></td> 
+                <td>12.08.2012</td>
+                <td>
+                    <img src="images/author_5.jpg" alt="" class="authorPhotoPhoto">
+                    <span class="author">
+                        Mathew Hartin
+                    </span>
+                </td>
+                <td><p>"Where is there any water?" he said.  "He is dying fast, and very thirsty.  It is Lord Garrick." "Lord Garrick!" said my brother; "the Chief Justice?" "The water?" he said. "There may be a tap," said my brother, "in some of the houses.  We have no water. </p></td>
+                <td><a href="" class="popupBtn">Delete</a></td>
+            </tr>
+            <tr>
+                <td><p class="checkers"><input type="checkbox" id="borderedCheckbox_5" name="borderedCheckbox" value="5" data-select-all="sa_borderedCheckbox" class="checkme" /><label for="borderedCheckbox_5"></label></p></td>
+                <td>13.08.2012</td>
+                <td>
+                    <img src="images/author_6.jpg" alt="" class="authorPhotoPhoto">
+                    <span class="author">
+                        Erik Vassel
+                    </span>
+                </td> 
+                <td><p>"Come!" said Phileas Fogg to his servant. "But let them at least give me back my shoes!" cried Passepartout angrily. "Ah, these are pretty dear shoes!" he muttered, as they were handed to him.</p></td>
+                <td><a href="" class="popupBtn">Delete</a></td>
+            </tr>
+            <tr>
+                <td><p class="checkers"><input type="checkbox" id="borderedCheckbox_6" name="borderedCheckbox" value="6" data-select-all="sa_borderedCheckbox" class="checkme" /><label for="borderedCheckbox_6"></label></p></td> 
+                <td>15.08.2012</td>
+                <td>
+                    <img src="images/author_7.jpg" alt="" class="authorPhotoPhoto">
+                    <span class="author">
+                        Neil Lettinga
+                    </span>
+                </td>
+                <td><p>"It were better <em>that you held the key,</em> Tars Tarkas," I replied He smiled, and said no more, but that night as we were making camp I saw him unfasten Dejah Thoris' fetters himself. With all his cruel ferocity and coldness there was an undercurrent of something in Tars Tarkas which he seemed ever battling to subdue.</p></td>
+                <td><a href="" class="popupBtn">Delete</a></td>
+            </tr>    
+            <tr>
+
+                <td><p class="checkers"><input type="checkbox" id="borderedCheckbox_7" name="borderedCheckbox" value="7" data-select-all="sa_borderedCheckbox" class="checkme" /><label for="borderedCheckbox_7"></label></p></td> 
+                <td>16.08.2012</td>
+                <td>
+                    <img src="images/author_8.jpg" alt="" class="authorPhotoPhoto">
+                    <span class="author">
+                        Lance Schlomann
+                    </span>
+                </td>
+                <td><p>"Now there is Mr. Joker, one of our clowns," continued the china lady, "who is always trying to stand upon his head.  He has broken himself so often that he is mended in a hundred places, and doesn't look at all pretty.  Here he comes now, so you can see for yourself."</p></td>
+                <td><a href="" class="popupBtn">Delete</a></td>
+            </tr>
+            <tr>
+                <td><p class="checkers"><input type="checkbox" id="borderedCheckbox_8" name="borderedCheckbox" value="8" data-select-all="sa_borderedCheckbox" class="checkme" /><label for="borderedCheckbox_8"></label></p></td> 
+                <td>16.08.2012</td>
+                <td>
+                    <img src="images/author_9.jpg" alt="" class="authorPhotoPhoto">
+                    <span class="author">
+                        Kelly Heasley
+                    </span>
+                </td>
+                <td><p>"Thank you," returned Mr. Fogg, descending mathematically to the saloon. Passepartout clasped the pilot's hand and shook it heartily in his delight, exclaiming, "Pilot, you are the best of good fellows!" The pilot probably does not know to this day why his responses won him this enthusiastic greeting.</p></td>
+                <td><a href="" class="popupBtn">Delete</a></td>
+            </tr>
+            <tr>
+                <td><p class="checkers"><input type="checkbox" id="borderedCheckbox_9" name="borderedCheckbox" value="9" data-select-all="sa_borderedCheckbox" class="checkme" /><label for="borderedCheckbox_9"></label></p></td> 
+                <td>18.08.2012</td>
+                <td>
+                    <img src="images/author_3.jpg" alt="" class="authorPhotoPhoto">
+                    <span class="author">
+                        Darren Blau
+                    </span>
+                </td>
+                <td><p>She was surprised, as she walked along, to see how pretty the country was about her.</p></td>
+                <td><a href="" class="popupBtn">Delete</a></td>
+            </tr> 
+
+        </table>
+    </section>
+    <!-- TABLE END -->
+
+    <!-- FORM -->
+    <h2 class="contentHeading"><a id="formContent">Form</a></h2>
+    <section>
+        <div id="formCointainerInner" class="cf">
+            <div class="alert cf" id="successMsg"><p>A success message goes here!</p><a href="javascript:void(0);" class="close"></a></div>
+            <div class="alert cf" id="errorMsg"><p>An error message goes here!</p><a href="javascript:void(0);" class="close"></a></div>
+            <div class="alert cf" id="informationMsg"><p>An informative message goes here!</p><a href="javascript:void(0);" class="close"></a></div>
+            <form action=".">
+                <ul class="formList">
+                    <li><label for="SmallInput">Small input field</label></li>
+                    <li><input type="text" class="inputField inputSmall" id="SmallInput"></li>
+                    <li><label for="MediumInput">Medium input field</label></li>
+                    <li><input type="text" class="inputField inputMedium" id="MediumInput"></li>
+                    <li><label for="LargeInput">Large input field</label></li>
+                    <li><input type="text" class="inputField inputLarge" id="LargeInput"></li>
+                    <li><label for="error">Input label with error</label></li>
+                    <li><input type="text" class="inputField inputSmall" id="error"></li>
+                    <li><label for="formSelect">Dropdown:</label></li>
+                    <li class="selectDrop">
+                        <select data-placeholder="Choose an action..." class="customSelect chzn-select" style="width:200px;" tabindex="2" id="formSelect">
+                            <option>Choose an action...</option>
+                            <option>Through Google</option>
+                            <option>Through Twitter</option>
+                            <option>Other&hellip;</option>
+                            <option>&lt;Hi&gt;</option>
+                        </select>
+                    </li>
+                    <li>
+                        <ul>
+                            <li><legend>Radio buttons:</legend></li>
+                            <li><label for="radio1"><input type="radio" name="radio" class="customRadio" id="radio1"/> Saying hi</label></li>
+                            <li><label for="radio2"><input type="radio" name="radio" class="customRadio" id="radio2"/> Sending feedback</label></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul>
+                            <li><legend>Checkboxes:</legend></li>
+                            <li><label for="formCheckbox1"><input type="checkbox" class="customCheck" id="formCheckbox1"/> Please contact me back</label></li>
+                            <li><label for="formCheckbox2"><input type="checkbox" class="customCheck" id="formCheckbox2"/> Please contact me back</label></li>
+                        </ul>
+                    </li>
+                    <li><label for="formCustomIpload">Upload file:</label></li>
+                    <li><input class="customUploadField" type="file" id="formCustomIpload"/></li>
+                    <li>
+                        <div class="dateHolder" id="leftDateHolder">
+                            <label for="datepicker" class="dateHolderLable">Starting date:</label>
+                            <input type="text" class="inputField date" id="datepicker">
+                        </div>
+                        <div class="dateHolder" id="rightDateHolder">
+                            <label for="datepicker2" class="dateHolderLable">Ending date:</label>
+                            <input type="text" class="inputField date" id="datepicker2">
+                        </div>
+                    </li>
+                    <li><label for="markItUp">Text area</label></li>
+                    <li>
+                        <div class="textareaContainer">
+                            <textarea id="markItUp" cols="80" rows="20"></textarea>
+                        </div>
+                    </li>
+                    <li class="demoSubmits"><input class="submit" type="submit" value="Submit" name="submit"></li>
+                    <li class="demoSubmits"><input class="submit" type="submit" value="Long submit" name="submit"></li>
+                </ul>
+            </form>
+        </div>
+    </section>
+    <!-- FORM END -->
+
+
+    <!-- CONTENT -->
+    <h2 class="contentHeading"><a id="contentContent">Content</a></h2>
+    <section>
+        <h1>Heading 1</h1><br>
+        <h2>Heading 2</h2><br>
+        <h3>Heading 3</h3><br>
+        <h4>Heading 4</h4><br>
+        <h5>Heading 5</h5><br>
+        <h6>Heading 6</h6><br>
+        <p>p Well, <em>the way they make shows is,</em> they make one show. That show's called a pilot. Then they show that show to the people who make shows, and on the strength of that one show they decide if they're going to make more shows. Some pilots get picked and become television programs. Some don't, <a href="">become nothing</a>. She starred in one of the ones that became nothing. /p</p><br>
+        <a href="">A link</a><br><br>
+        <div class="demoLists">
+            <h4>Unodered list:</h4><br>
+            <ul>
+                <li>"The heart began to beat</li>
+                <li> If one  lived through them, he</li>
+                <li> The heels became  numb first
+                    <ul>
+                        <li>"Don't be afraid now," said he</li>
+                        <li>"Stop your grinning," <em>shouted I</em></li>
+                        <li> Queequeg, look here&mdash;you sabbee me</li>
+                        <li> "You gettee in," he added</li>
+                    </ul>
+                </li>
+                <li> They did not <a href="">rave</a> or <a href="">sleep</a></li>
+            </ul>
+        </div>
+        <div class="demoLists">
+            <h4>Odered list:</h4><br>
+            <ol>
+                <li>"The heart began to beat</li>
+                <li>  Then came the scarlet rash</li>
+                <li> The heels became  numb first
+                    <ul>
+                        <li>"Don't be afraid now," said he</li>
+                        <li>"Stop your grinning," shouted I</li>
+                        <li> Queequeg, look here&mdash;you sabbee me</li>
+                        <li> "You gettee in," he added</li>
+                    </ul>
+                </li>
+                <li> They did not rave or sleep</li>
+            </ol>
+        </div>
+    </section>
+    <!-- CONTENT END -->
+
+
+    <!-- LEFT & RIGHT -->
+    <div class="left">
+    <h2 class="contentHeading">Left</h2>
+    <section>
+        <blockquote>
+            <p>At that time it was quite clear in my <em>own mind</em> that the Thing had come from the planet Mars, but I judged it improbable that it contained any living creature.</p>
+            <span>John Karter</span>
+        </blockquote>
+        <blockquote class="rightBlockQ cf">
+            <p>"Granser, what for do you always say so much what nobody knows?"</p>
+            <span>John Karter</span>
+        </blockquote>
+    </section>
+    </div>
+    <div class="right">
+    <h2 class="contentHeading">Right</h2>
+    <section>
+         <ul class='tabs'>
+            <li><a href='#tab11'>Form</a></li>
+            <li><a href='#tab22'>Chart</a></li>
+        </ul>
+        <div class="tabsContent" id='tab11'>
+            <form action=".">
+                <ul class="formList">
+                    <li><label for="SmallInput2">Small input label</label></li>
+                    <li><input type="text" class="inputField inputSmall" id="SmallInput2"></li>
+                    <li><label for="markItUpSec">Text area</label></li>
+                    <li>
+                        <div class="textareaContainer">
+                            <textarea id="markItUpSec" cols="80" rows="20"></textarea>
+                        </div>
+                    </li>
+                    <li class="demoSubmits"><input class="submit" type="submit" value="Submit" name="submit"></li>
+                </ul>
+            </form>
+        </div>
+        <div class="tabsContent chart" id='tab22'>
+              <div id="chart-bar" style="width:100%;height:300px"></div>
+        </div>
+    </section>
+    </div>
+    <!-- LEFT & RIGHT END -->
+
+
+
+    <!-- TABS -->
+    
+    <h2 class="contentHeading"><a id="tabsContent">Tabs</a></h2>
+    <section>
+        <ul class='tabs'>
+            <li><a href='#tab1'>Tab 1</a></li>
+            <li><a href='#tab2'>Tab 2</a></li>
+            <li><a href='#tab3'>Tab 3</a></li>
+        </ul>
+        <div class="tabsContent" id='tab1'>
+            <h3>Section 1</h3>
+            <p>'They all can,' said the Duchess; 'and most of 'em do.' 'I don't know of any that do,' Alice said very politely, feeling quite  pleased to have <em>got into a conversation.</em> 'You don't know much,' said the Duchess; 'and that's a fact.' Alice did not at all like the tone of this remark, and thought it would  be as well to introduce some other subject of conversation. While she  was trying to fix on one, the cook took the cauldron of soup off the  fire, and at once set to work throwing everything within her reach at  the Duchess and the baby&mdash;the fire-irons came first; then followed a  shower. While she  was <a href="">trying to fix</a> did not at all like the on one of saucepans.</p>
+        </div>
+        <div class="tabsContent" id='tab2'>
+            <h3>Section 2</h3>
+            <p>"Now Jonah's Captain, shipmates, was one whose <em>discernment detects crime</em> in any, but whose cupidity exposes it only in the penniless. In this world, shipmates, sin that pays its way can travel freely, and without a passport; whereas Virtue, if a pauper, is stopped at all frontiers. So Jonah's Captain prepares to test the length of Jonah's purse, ere he judge him openly. He charges him thrice the usual sum; and it's assented to.</p><br>
+            <ul>
+                <li>"The heart began to beat</li>
+                <li> If one  lived through them, he</li>
+                <li> The heels became  numb first
+                    <ul>
+                        <li><a href="">"Don't be afraid now," said he</a></li>
+                        <li>"Stop your grinning," shouted I</li>
+                        <li> Queequeg, look here&mdash;you sabbee me</li>
+                        <li> "You gettee in," he added</li>
+                    </ul>
+                </li>
+                <li> They did not rave or sleep</li>
+            </ul><br>
+            <p>Then the Captain knows that Jonah is a fugitive; but at the same time resolves to help a flight that paves its rear with gold. Yet when Jonah fairly takes out his purse, prudent suspicions still molest the Captain. He rings every coin to find a counterfeit. Not a forger, any way, he mutters; and Jonah is put down for his passage. 'Point out my state-room, Sir,' says Jonah now, 'I'm travel-weary; I need sleep.' 'Thou lookest like it,' says the Captain, <em>'there's thy room.'</em> Jonah enters, and would <em>lock the door</em>, but the lock contains no key. Hearing him foolishly fumbling there, the Captain laughs lowly to himself, and mutters something about the doors of convicts' cells being never allowed to be locked within.</p>
+        </div>
+        <div class="tabsContent" id='tab3'>
+            <h3>Section 3</h3>
+            <p>"Glinda might," he suggested. <a href="">"Who is Glinda?"</a> inquired the Scarecrow. "The Witch of the South.  She is the most powerful of all the Witches, and rules over the Quadlings.  Besides, her castle stands on the edge of the desert, so she may know a way to cross it." "Glinda is a Good Witch, isn't she?" asked the child. "The Quadlings think she is good," said the soldier, "and she is kind to everyone. <em>I have heard that Glinda is a beautiful woman, who knows how to keep young in spite of the many years she has lived."</em> "How can I get to her castle?" asked Dorothy. "The road is straight to the South," he answered, "but it is said to be full of dangers to travelers.  There are wild beasts in the woods, and a race of queer men who do not like strangers to cross their country. For this reason none of the Quadlings ever come to the Emerald City." The soldier then left them and the Scarecrow said: "It seems, in spite of dangers, that the best thing Dorothy can do is to travel to the Land of the South and ask Glinda to help her.  For, of course, if Dorothy stays here she will never get back to Kansas." "You must have been thinking again," remarked the Tin Woodman. "I have," said the Scarecrow.</p>
+        </div>        
+    </section>
+
+    <!-- TABS END -->
+
+
+     <!-- GALLERY -->
+    <h2 class="contentHeading"><a id="galleryContent">Gallery</a></h2>
+    <section class="gallerySection">
+        <ul class="galleryListContainer">
+            <li class="galleryListElement">
+                <div class="galleryImage">
+                    <img src="images/imageImage1.jpg" alt="">
+                    <div class="gallerOverlay">
+                        <div class="galleryButtons">
+                            <a href="images/bigger/imageImage1.jpg" class="view button" rel="lightbox" title="image 1">View</a>
+                            <a href="" class="delete button popupBtn">Delete</a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="galleryListElement">
+                <div class="galleryImage">
+                    <img src="images/imageImage2.jpg" alt="">
+                    <div class="gallerOverlay">
+                        <div class="galleryButtons">
+                           <a href="images/bigger/imageImage2.jpg" class="view button" rel="lightbox" title="image 2">View</a>
+                            <a href="" class="delete button popupBtn">Delete</a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="galleryListElement">
+                <div class="galleryImage">
+                    <img src="images/imageImage3.jpg" alt="">
+                    <div class="gallerOverlay">
+                        <div class="galleryButtons">
+                            <a href="images/bigger/imageImage3.jpg" class="view button" rel="lightbox" title="image 3">View</a>
+                            <a href="" class="delete button popupBtn">Delete</a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="galleryListElement">
+                <div class="galleryImage">
+                    <img src="images/imageImage4.jpg" alt="">
+                    <div class="gallerOverlay">
+                        <div class="galleryButtons">
+                            <a href="images/bigger/imageImage4.jpg" class="view button" rel="lightbox" title="image 4">View</a>
+                            <a href="" class="delete button popupBtn">Delete</a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="galleryListElement">
+                <div class="galleryImage">
+                    <img src="images/imageImage5.jpg" alt="">
+                    <div class="gallerOverlay">
+                        <div class="galleryButtons">
+                           <a href="images/bigger/imageImage5.jpg" class="view button" rel="lightbox" title="image 5">View</a>
+                            <a href="" class="delete button popupBtn">Delete</a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="galleryListElement">
+                <div class="galleryImage">
+                    <img src="images/imageImage6.jpg" alt="">
+                    <div class="gallerOverlay">
+                        <div class="galleryButtons">
+                           <a href="images/bigger/imageImage6.jpg" class="view button" rel="lightbox" title="image 6">View</a>
+                            <a href="" class="delete button popupBtn">Delete</a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="galleryListElement">
+                <div class="galleryImage">
+                    <img src="images/imageImage7.jpg" alt="">
+                    <div class="gallerOverlay">
+                        <div class="galleryButtons">
+                           <a href="images/bigger/imageImage7.jpg" class="view button" rel="lightbox" title="image 7">View</a>
+                            <a href="" class="delete button popupBtn">Delete</a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="galleryListElement">
+                <div class="galleryImage">
+                    <img src="images/imageImage8.jpg" alt="">
+                    <div class="gallerOverlay">
+                        <div class="galleryButtons">
+                           <a href="images/bigger/imageImage8.jpg" class="view button" rel="lightbox" title="image 8">View</a>
+                            <a href="" class="delete button popupBtn">Delete</a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="galleryListElement">
+                <div class="galleryImage">
+                    <img src="images/imageImage9.jpg" alt="">
+                    <div class="gallerOverlay">
+                        <div class="galleryButtons">
+                           <a href="images/bigger/imageImage9.jpg" class="view button" rel="lightbox" title="image 9">View</a>
+                            <a href="" class="delete button popupBtn">Delete</a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="galleryListElement">
+                <div class="galleryImage">
+                    <img src="images/imageImage10.jpg" alt="">
+                    <div class="gallerOverlay">
+                        <div class="galleryButtons">
+                           <a href="images/bigger/imageImage10.jpg" class="view button" rel="lightbox" title="image 10">View</a>
+                            <a href="" class="delete button popupBtn">Delete</a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="galleryListElement">
+                <div class="galleryImage">
+                    <img src="images/imageImage1.jpg" alt="">
+                    <div class="gallerOverlay">
+                        <div class="galleryButtons">
+                           <a href="images/bigger/imageImage1.jpg" class="view button" rel="lightbox" title="image 11">View</a>
+                            <a href="" class="delete button popupBtn">Delete</a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="galleryListElement">
+                <div class="galleryImage">
+                    <img src="images/imageImage2.jpg" alt="">
+                    <div class="gallerOverlay">
+                        <div class="galleryButtons">
+                           <a href="images/bigger/imageImage2.jpg" class="view button" rel="lightbox" title="image 12">View</a>
+                            <a href="" class="delete button popupBtn">Delete</a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </section>
+    <!-- GALLERY END -->
+
+    <div class="pop_up">
+        <h1>Delete this item?</h1>
+        <ul class="cf">
+            <li><a href="" class="buttonAction apply">Yes</a></li>
+            <li><a href="" class="buttonAction delete no">No</a></li>
+        </ul>
+    </div>
+
+  </div>
+</div>
+
+<!-- JAVASCRIPTS -->
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+
+
+<!-- bPopum -->
+
+<script type="text/javascript" src="js/jquery.bpopup-0.7.0.min.js"></script>
+<script type="text/javascript">
+$(function() {
+
+    $('.popupBtn').on('click', function(e) {
+
+        e.preventDefault();
+
+        $('.pop_up').bPopup({
+            closeClass:'no',
+            modalClose: true,
+            opacity: 0.6,
+            positionStyle: 'fixed' //'fixed' or 'absolute'
+        });
+    });
+
+});
+</script>
+
+<!-- bPopum END -->
+
+
+<!-- Menu toggle class -->
+<script type="text/javascript">
+$(function() {
+
+  $(".helperDiv a").click(function(){
+    $(this).addClass('active').siblings().removeClass('active');
+  });
+
+});
+</script>
+<!-- Menu toggle class END -->
+
+
+<!-- Notification animation -->
+<script type="text/javascript">
+$(function() {
+
+    // Yes, unnecessary code, but it's a bug fix for a nasty jump in the animation
+        var $div = $('.alert');
+        var height = $div.height();
+        $div.hide().css({ height : 0 });
+        $div.show().css({ height : height });
+    //
+
+    $(".alert a").click(function(){
+        $(this).parent().animate({opacity: "0"}, 600, function(){
+            $(this).animate({height: "0"}, 300, function(){
+                $(this).remove();
+        });
+    });
+
+  });
+
+});
+</script>
+<!-- Notification animation END -->
+
+
+
+<!-- iOS input field zoom fix -->
+<script type="text/javascript">
+
+$(function() {
+
+  $("input[type=text], input[type=password], textarea, select").mouseover(zoomDisable).mousedown(zoomEnable);
+  function zoomDisable(){
+    $('head meta[name=viewport]').remove();
+    $('head').prepend('<meta name="viewport" content="user-scalable=0" />');
+  }
+  function zoomEnable(){
+    $('head meta[name=viewport]').remove();
+    $('head').prepend('<meta name="viewport" content="user-scalable=1" />');
+  }
+});
+
+</script>
+<!-- iOS input field zoom fix END -->
+
+
+<!-- Table zebra effect javascript -->
+<script type="text/javascript">
+$('.tables tr').mouseover(function(){
+  $(this).addClass('highlight');
+}).mouseout(function(){
+  $(this).removeClass('highlight');
+});
+
+$(".tables tbody tr:even").addClass('alt');
+</script>
+<!-- Table zebra effect javascript END -->
+
+
+<!-- Sidebar menu "JScrollPane" scroller javascript END -->
+<script src="js/jquery.jscrollpane.min.js"></script>
+<script src="js/jquery.mousewheel.js"></script>
+<script src="js/jquery.throttledresize.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        var element = $('#menu').jScrollPane({ verticalGutter : 0, hideFocus : true });
+        if ($(window).width() > 600) {
+        $(window).on("throttledresize", function( event ) {
+            $('#menu').data('jsp').reinitialise();
+        });
+        }else{
+            var api = element.data('jsp');
+            api.destroy();
+        }
+    });
+</script>
+<!-- Sidebar menu "JScrollPane" scroller javascript END -->
+
+
+<!-- Custom upload field and Dropdown selector "Choosen" javascript and switch case (iOS optimized) -->
+<script src="js/jquery.uniform.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/chosen.jquery.js" type="text/javascript"></script>
+<script type="text/javascript">
+    $(function(){
+        $(".customUploadField, .customCheck, .customRadio").uniform();
+
+        if ($(window).width() > 600) {
+                $(".chzn-select").chosen();
+                $('.chzn-search').hide();
+        }else{
+                $('.customSelect').uniform();
+        }
+
+    });
+</script>
+<!-- Custom upload field and Dropdown selector "Choosen" javascript and switch case (iOS optimized) END -->
+
+
+<!-- Text editor "markItUp" javascript -->
+<script type="text/javascript" src="js/jquery.markitup.js"></script>
+<script type="text/javascript" src="js/markitup_settings.js"></script>
+<script type="text/javascript">
+$(function() {
+    $('#markItUp').markItUp(mySettings);
+    $('#markItUpSec').markItUp(mySettings);
+});
+</script>
+<!-- Text editor "markItUp" javascript END -->
+
+
+<!-- Table sorter javascript -->
+<script type="text/javascript" src="js/jquery.tablesorter.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() 
+        { 
+            $("#borderedTableSorter").tablesorter({
+                headers: {0: {
+                        sorter: false
+                    }
+                }
+            }); 
+        } 
+    ); 
+</script>
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+    $(':checkbox.selectall').on('click', function(){
+        $(':checkbox[name="' + $(this).data('checkbox-name') + '"]').prop("checked", $(this).prop("checked"));
+    });
+    $(':checkbox.checkme').on('click', function(){
+        var _selectall = $(this).prop("checked");
+        if ( _selectall ) {
+            $( ':checkbox[name="' + $(this).attr('name') + '"]' ).each(function(i){
+                _selectall = $(this).prop("checked");
+                return _selectall;
+            });
+        }
+        $(':checkbox[name="' + $(this).data('select-all') + '"]').prop("checked", _selectall);
+    });
+});
+            
+</script>
+<!-- Table sorter javascript END -->
+
+
+<!-- Breadcrumbs dropdown javascript -->
+<script type="text/javascript">
+ // DOM ready
+ $(function() {
+   
+  // Create the dropdown base
+  $("#breadcrumbContainer").append('<select id="dropdownCustom"><select/>')  
+  // Create default option "Go to..."
+  $("<option />", {
+     "selected": "selected",
+     "value"   : "",
+     "text"    : "Go to..."
+  }).appendTo("#dropdownCustom");
+  
+  // Populate dropdown with menu items
+  $("#breadcrumbContainer a").each(function() {
+   var el = $(this);
+   $("<option />", {
+       "value"   : el.attr("href"),
+       "text"    : el.text()
+   }).appendTo("#dropdownCustom");
+  });
+  if($.browser.msie && parseInt($.browser.version, 10) == 8) {
+      $("#breadcrumbContainer select").change(function() {
+        window.location = $(this).find("option:selected").val();
+      });
+    }   
+ });
+</script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    createDropDown();
+    $(".dropdownCustomDl dt a").click(function() {
+    $(".dropdownCustomDl dd ul").toggle();
+    });
+    $(document).bind('click', function(e) {
+    var $clicked = $(e.target);
+    if (! $clicked.parents().hasClass("dropdownCustomDl"))
+    $(".dropdownCustomDl dd ul").hide();
+    });
+    $(".dropdownCustomDl dd ul li a").click(function() {
+    var text = $(this).html();
+    $(".dropdownCustomDl dt a").html(text);
+    $(".dropdownCustomDl dd ul").hide();
+    var source = $("#dropdownCustom");
+    source.val($(this).find("span.value").html())
+    });
+});
+function createDropDown(){
+    var source = $("#dropdownCustom");
+    var selected = source.find("option[selected]");  // get selected <option>
+    var options = $("option", source);  // get all <option> elements
+    // create <dl> and <dt> with selected value inside it
+    $("#breadcrumbContainer").append('<dl id="target" class="dropdownCustomDl"></dl>')
+    $("#target").append('<dt><a ' + selected.val() + '>' + selected.text() + 
+        '</a></dt>')
+    $("#target").append('<dd><ul></ul></dd>')
+    // iterate through all the <option> elements and create UL
+    options.each(function(){
+        $("#target dd ul").append('<li><a href="' + $(this).val() + '">' + 
+            $(this).text() + '</a></li>');
+    });
+}   
+</script>
+<!-- Breadcrumbs dropdown javascript END -->
+
+
+<!-- Datepicker icon span add -->
+<script type="text/javascript">
+$(function() {
+    $("#error").after('<span class="errorSpan">An error reason goes here!</span>');
+});
+</script>
+<!-- Datepicker icon span add END -->
+
+
+<!-- Datepicker -->
+<script type='text/javascript' src='js/jquery-ui-1.8.17.custom.min.js'></script>
+<script src="js/jquery.ui.widget.js"></script>
+<script src="js/jquery.ui.datepicker.js"></script><!-- Datepicker (mini calendar) -->
+
+<script type="text/javascript">
+    $(function() {
+        $( "#datepicker" ).datepicker();
+        $( "#datepicker2" ).datepicker();
+    });
+</script>
+
+<!-- Datepicker icon span add -->
+<script type="text/javascript">
+$(function() {
+    $(".date").after('<span class="dateSpan"></span>');
+});
+</script>
+<!-- Datepicker icon span add END -->
+
+<!-- Datepicker END-->
+
+
+<!-- Tabs -->
+<script type="text/javascript">
+// Wait until the DOM has loaded before querying the document
+$(document).ready(function(){
+    $('ul.tabs').each(function(){
+        // For each set of tabs, we want to keep track of
+        // which tab is active and it's associated content
+        var $active, $content, $links = $(this).find('a');
+
+        // If the location.hash matches one of the links, use that as the active tab.
+        // If no match is found, use the first link as the initial active tab.
+        $active = $($links.filter('[href="'+location.hash+'"]')[0] || $links[0]);
+        $active.addClass('active');
+        $content = $($active.attr('href'));
+
+        // Hide the remaining content
+        $links.not($active).each(function () {
+            $($(this).attr('href')).hide();
+        });
+
+        // Bind the click event handler
+        $(this).on('click', 'a', function(e){
+            // Make the old tab inactive.
+            $active.removeClass('active');
+            $content.hide();
+
+            // Update the variables with the new link and content
+            $active = $(this);
+            $content = $($(this).attr('href'));
+
+            // Make the tab active.
+            $active.addClass('active');
+            $content.show();
+
+            // Prevent the anchor's default click action
+            e.preventDefault();
+        });
+    });
+});
+</script>
+<!-- Tabs END -->
+
+
+<!-- Charts -->
+<script src="js/jquery.flot.js" type="text/javascript"></script>
+<script src="js/jquery.flot.resize.js" type="text/javascript"></script>
+<script src="js/jquery.flot.tooltip.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(function () {
+
+    var chartColours = ['#88bbc8', '#ed7a53', '#9FC569', '#bbdce3', '#9a3b1b', '#5a8022', '#2c7282'];
+
+    var d1 = [];
+    var d2 = []
+
+    random_value = 200;
+    for (var index = 0, counter = 40; index < counter; index++) {
+
+        var randomValue = Math.random() * 100 + 15 + random_value;
+        var randomVariance = Math.random() * 20;
+        var v = randomValue / 25 
+                + (Math.cos((index * counter * 11) / 960) + 2) * 78 
+                + (Math.cos(index / 7) + 2) * 7
+                + (Math.cos(index / 17) + 2) * 1;
+
+        d1.push([index, v+randomVariance]);
+        random_value = randomValue * .9;
+
+    } 
+
+    random_value = 100;
+     for (var index = 0, counter = 40; index < counter; index++) {
+
+        var randomValue = Math.random() * 100 + 15 + random_value;
+        var randomVariance = Math.random();
+        var v = randomValue / 15
+                + (Math.cos((index * counter * 11) / 960) + 2) / 62
+                + (Math.cos(index / 7) + 2) * 7
+                + (Math.cos(index / 17) + 2) * 1;
+
+        d2.push([index, v+randomVariance]);
+        random_value = randomValue * .9;
+
+    } 
+   
+    var options = {
+                grid: {
+                    show: true,
+                    aboveData: true,
+                    color: "#3f3f3f" ,
+                    labelMargin: 5,
+                    axisMargin: 0, 
+                    borderWidth: 0,
+                    borderColor:null,
+                    minBorderMargin: 5 ,
+                    clickable: true, 
+                    hoverable: true,
+                    autoHighlight: true,
+                    mouseActiveRadius: 20
+                },
+                series: {
+                    grow: {
+                        active: false,
+                        stepMode: "linear",
+                        steps: 30,
+                        stepDelay: true
+                    },
+                    lines: {
+                        show: true,
+                        fill: true,
+                        lineWidth: 4,
+                        steps: false
+                        },
+                    points: {
+                        show:true,
+                        radius: 3,
+                        symbol: "circle",
+                        fill: true,
+                        borderColor: "#fff"
+                    }
+                },
+                legend: { 
+                    position: "nw", 
+                    margin: [0,-30], 
+                    noColumns: 0,
+                    labelBoxBorderColor: null
+                },
+                yaxis: { min: 0 },
+                xaxis: {ticks:10, tickDecimals: 0},
+                colors: chartColours,
+                shadowSize:1,
+                tooltip: true, //activate tooltip
+                tooltipOpts: {
+                    content: "%s : %y.0",
+                    shifts: {
+                        x: -30,
+                        y: -50
+                    }
+                }
+            };   
+
+
+            var chart_placeholder = $("#chart-line");
+    
+            $.plot(chart_placeholder, [ 
+
+                {
+                    label: "Visits", 
+                    data: d1,
+                    lines: {fillColor: "#f2f7f9"},
+                    points: {fillColor: "#88bbc8"}
+                }, 
+                {   
+                    label: "Unique Visits", 
+                    data: d2,
+                    lines: {fillColor: "#fff8f2"},
+                    points: {fillColor: "#ed7a53"}
+                } 
+
+            ], options);
+            chart_placeholder.resize();
+
+
+             var options_bar_chart = {
+                grid: {
+                    show: true,
+                    aboveData: true,
+                    color: "#3f3f3f" ,
+                    labelMargin: 5,
+                    axisMargin: 0, 
+                    borderWidth: 0,
+                    borderColor:null,
+                    minBorderMargin: 5 ,
+                    clickable: true, 
+                    hoverable: true,
+                    autoHighlight: true,
+                    mouseActiveRadius: 20
+                },
+                series: {
+                    grow: {
+                        active: false,
+                        stepMode: "linear",
+                        steps: 20,
+                        stepDelay: true
+                    },
+                    bars: {
+                        show: true,
+                        fill: true,
+                        lineWidth: 1,
+                        steps: false
+                        }
+                },
+                legend: { 
+                    position: "nw", 
+                    margin: [0,-30], 
+                    noColumns: 0,
+                    labelBoxBorderColor: null
+                },
+                yaxis: { min: 0 },
+                xaxis: {ticks:10, tickDecimals: 0},
+                colors: chartColours,
+                shadowSize:1,
+                tooltip: true, //activate tooltip
+                tooltipOpts: {
+                    content: "%s : %y.0",
+                    shifts: {
+                        x: -30,
+                        y: -50
+                    }
+                }
+            };  
+
+            var chart_placeholder_bar = $("#chart-bar");
+    
+            $.plot(chart_placeholder_bar, [ 
+
+                {
+                    label: "Visits", 
+                    data: d1,
+                    bars: {fillColor: "#f2f7f9"},
+                    points: {fillColor: "#88bbc8"}
+                }, 
+                {   
+                    label: "Unique Visits", 
+                    data: d2,
+                    bars: {fillColor: "#fff8f2"},
+                    points: {fillColor: "#ed7a53"}
+                } 
+
+            ], options_bar_chart);
+            chart_placeholder_bar.resize();
+
+
+
+
+});
+</script>
+<!-- Charts END -->
+
+
+<!-- Lightbox -->
+<script type="text/javascript">
+    if($(window).width() > 600) {
+        var sc = document.createElement('script');
+        sc.src = 'js/lightbox.js';
+        sc.type = 'text/javascript';
+        if(typeof sc.async !== 'undefined') {
+            sc.async = true;
+        }  
+        document.getElementsByTagName('body')[0].appendChild(sc);
+    }   
+</script>
+<!-- Lightbox END -->
+
+</body>
+</html>

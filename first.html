@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Roots login</title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<body>
+
+		<!-- content -->
+		<div id="login">
+			<div>
+				<ul class="tabs_navigation">
+					<li><a href="" data-tab="select-user" class="active" id="select_user_tab">Select User</a></li>
+					<li><a href="" data-tab="switch-user">Switch User</a></li>
+				</ul>
+				<ul class="tabs">
+					<li data-tab="select-user" class="active_tab">
+						<ul class="select-user">
+							<li>
+								<a href="" data-username="UserOne">
+									<img src="images/loginUserOne.png" alt="UserOnePhoto">
+								</a>
+								<div class="select-user-align"></div>
+							</li>
+							<li>
+								<a href="" data-username="UserTwo">
+									<img src="images/loginUserTwo.png" alt="UserTwoPhoto">
+								</a>
+								<div class="select-user-align"></div>
+							</li>
+							<li>
+								<a href="" data-username="UserOne">
+									<img src="images/loginUserOne.png" alt="UserOnePhoto">
+								</a>
+								<div class="select-user-align"></div>
+							</li>
+							<li>
+								<a href="" data-username="UserTwo">
+									<img src="images/loginUserTwo.png" alt="UserTwoPhoto">
+								</a>
+								<div class="select-user-align"></div>
+							</li>
+						</ul>
+						<form action="" id="user_login">
+							<ul class="form-list">
+								<li>
+									<input type="hidden" id="username" name="username" value="" class="input">
+									<input type="password" placeholder="Password" class="input">
+								</li>
+								<li>
+									<input type="submit" value="Login" class="btn btn-wide btn-apply">
+									<a href="">forgot your password?</a>
+								</li>
+							</ul>
+						</form>
+					</li>
+					<li data-tab="switch-user">
+						<form action="" id="user_switch">
+							<ul class="form-list">
+								<li><input type="text" name="username" placeholder="Username" class="input"></li>
+								<li><input type="password" placeholder="Password" class="input"></li>
+								<li>
+									<input type="submit" value="Login">
+									<a href="">forgot your password?</a>
+								</li>
+							</ul>
+						</form>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- content end -->
+
+		<!-- scripts -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.js"></script>
+		<script>
+		$(document).ready(function() {
+
+			// select user
+			$("#user_login").hide();
+
+			function open_users() {
+				$(".select-user a").removeClass("active"); // remove active class on user elements
+				$(".select-user a").show(300); // show hidden users
+				$("#user_login").animate({opacity: '0', height: 'toggle'}, 500); // hide login form
+			}
+
+			function close_users(element) {
+				element.addClass("active");
+				$(".select-user a").not(element).hide(300);
+				$("#username").val($(element).data("username"));
+				$("#user_login").animate({opacity: '1', height: 'toggle'}, 500);
+			}
+
+			$(".select-user a").click(function(e){
+				e.preventDefault();
+
+				if($(this).hasClass("active")) {
+					open_users();
+				} else {
+					close_users($(this));
+				}
+			});
+
+			// $("#select_user_tab").not("active").click(function() { // open users when you go back from switch user to select user tab. remove if unwanted.
+			// 	if ($(this).hasClass("active")) {
+			// 		return;
+			// 	} else {
+			// 		open_users();
+			// 	}
+			// });
+
+			// select user end
+
+			// tabs responsive slide --- uncomment this to have tabs with effects.
+			// var done = true;
+
+			// $(".tabs_navigation a").click(function(e){
+			// 	e.preventDefault();
+
+			// 	// variables
+			// 	tabs_navigation = $(this).closest(".tabs_navigation");
+			// 	tabs = tabs_navigation.siblings(".tabs");
+			// 	tab_selected = $(this).data("tab");
+			// 	tab_element = tabs.find("[data-tab='" + tab_selected + "']");
+
+
+			// 	if ($(this).hasClass("active") || !done) {
+
+			// 		return;
+
+			// 	} else {
+
+			// 		done = false;
+
+			// 		// tabs navigation
+			// 		tabs_navigation.find("a.active").removeClass("active");
+			// 		$(this).addClass("active");
+
+			// 		// tabs
+			// 		tabs.find(".active_tab").fadeOut(300);
+
+			// 		tabs.animate({
+			// 			height: tab_element.height()
+			// 		}, 300, function(){
+			// 			$(this).css( "height", "auto" );
+			// 		});
+
+			// 		tab_element.fadeIn(300, function(){
+			// 			tabs.find(".active_tab").removeClass("active_tab");
+			// 			$(this).addClass("active_tab");
+			// 			done = true;
+			// 		});
+
+			// 	};
+
+			// });
+			// tabs responsive slide end
+
+			// tabs responsive regular
+			$(".tabs_navigation a").click(function(e){
+				e.preventDefault();
+
+				// variables
+				tabs_navigation = $(this).closest(".tabs_navigation");
+				tabs = tabs_navigation.siblings(".tabs");
+				tab_selected = $(this).data("tab");
+				tab_element = tabs.find("[data-tab='" + tab_selected + "']");
+
+
+				if ($(this).hasClass("active")) {
+
+					return;
+
+				} else {
+
+					// tabs navigation
+					tabs_navigation.find("a.active").removeClass("active");
+					$(this).addClass("active");
+
+					// tabs
+					tabs.find(".active_tab").css("display", "none");
+
+					tabs.css("height", tab_element.height());
+					tabs.css( "height", "auto" );
+
+					tab_element.css("display", "block");
+					tabs.find(".active_tab").removeClass("active_tab");
+					tab_element.addClass("active_tab");
+				};
+
+			});
+			// tabs responsive regular end
+
+		});
+		</script>
+		<!-- scripts end -->
+
+	</body>
+</html>

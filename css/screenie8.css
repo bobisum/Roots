@@ -1,0 +1,78 @@
+header, nav, section, article, aside, footer, hgroup {
+    display: block;
+}
+a#menuItem:hover, a#menuItem.active{
+	background-color:white;
+	background-position:222px -115px;
+	color:black;
+}
+.jspContainer .jspVerticalBar
+{
+	display: none;
+}
+
+.jspContainer:hover .jspVerticalBar
+{
+	display: inline;
+}
+
+.jspVerticalBar
+{
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 5px;
+	height: 100%;
+	background: red;
+}
+
+.jspTrack
+{
+	background: #2a2b2d;
+	position: relative;
+}
+
+.jspDrag
+{
+	background: #d4d4d5;
+	position: relative;
+	top: 0;
+	left: 0;
+	cursor: pointer;
+}
+
+a{
+	outline: none;
+}
+
+#checker{
+	display: inline !important;
+}
+
+#checker input{
+	display: inline;
+	position: relative !important;
+	outline: none;
+}
+
+#checker label{
+	display: none;
+}
+
+section{
+	display: inline !important;
+	position: relative !important;
+}
+
+.dropdownCustomDl dt{
+	display: inline !important;
+	position: relative !important;
+	width: 100% !important;
+}
+
+.dropdownCustomDl dt a{
+	display: inline !important;
+	position: relative !important;
+	width: 100% !important;
+	content: 'go to...' !important;
+}

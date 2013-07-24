@@ -8,6 +8,8 @@ $orange: #f1b603;
 $green: #89bc32;
 $dark_green: #75a22b;
 
+$pink: #d95353;
+
 $red: #d95353;
 $dark_red: #983a3a;
 
@@ -17,6 +19,9 @@ $dark_yellow: #f1b603;
 // $gray: ;
 $dark_gray: #dbdcdd;
 
+$sidebar_color: #05090c;
+$light_sidebar_color: #080f15;
+$dark_sidebar_color: #030406;
 $background_color: #f4f5f6;
 
 $font_main_color: #555555;
@@ -115,12 +120,18 @@ input:focus, textarea:focus, input:focus::-moz-focus-inner {
 .sidebar {
 	width: 250px;
 	display: table-cell;
-	background: url(../images/sidebar_background.jpg) repeat;
 }
 
 .content {
 	display: table-cell;
-	background: green;
+}
+
+.sidebar {
+	background: $sidebar_color;
+}
+
+.content {
+	background: $background_color;
 }
 /* LAYOUT END */
 
@@ -158,6 +169,19 @@ input:focus, textarea:focus, input:focus::-moz-focus-inner {
 	&:hover {
 		background: #ffffff;
 		color: $red;
+	}
+}
+
+.btn-logout {
+	background: $pink;
+	text-decoration: none;
+	font-size: 0.8em;
+	border: none;
+	padding: 2px 14px 3px;
+
+	&:hover {
+		background: #ffffff;
+		color: $pink;
 	}
 }
 
@@ -336,6 +360,31 @@ input:focus, textarea:focus, input:focus::-moz-focus-inner {
 	}
 }
 /* LOGIN SCREEN END */
+
+/* MAIN SCREEN */
+.user {
+	@extend .clearfix;
+	@include sizing;
+	margin: 50px 0 80px;
+	color: #ffffff;
+	font-size: 1.6em;
+	padding: 18px 14px;
+	border-bottom: 1px solid $light_sidebar_color;
+	border-top: 1px solid $light_sidebar_color;
+	background: $dark_sidebar_color;
+
+	img {
+		float: left;
+		margin-right: 18px;
+		@include border-radius(100px);
+	}
+
+	p {
+		margin: 10px 0 12px;
+	}
+}
+
+/* MAIN SCREEN END */
 
 /* TABS */
 .tabs_navigation {

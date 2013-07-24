@@ -50,14 +50,14 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 /* MIXINS */
 /* MIXINS END */
 /* CLEARFIX */
-.clearfix, .tabs_navigation {
+.clearfix, .user, .tabs_navigation {
   zoom: 1; }
-  .clearfix:before, .tabs_navigation:before, .clearfix:after, .tabs_navigation:after {
+  .clearfix:before, .user:before, .tabs_navigation:before, .clearfix:after, .user:after, .tabs_navigation:after {
     content: "\0020";
     display: block;
     height: 0;
     overflow: hidden; }
-  .clearfix:after, .tabs_navigation:after {
+  .clearfix:after, .user:after, .tabs_navigation:after {
     clear: both; }
 
 /* CLEARFIX END */
@@ -111,12 +111,16 @@ input:focus, textarea:focus, input:focus::-moz-focus-inner {
 
 .sidebar {
   width: 250px;
-  display: table-cell;
-  background: url(../images/sidebar_background.jpg) repeat; }
+  display: table-cell; }
 
 .content {
-  display: table-cell;
-  background: green; }
+  display: table-cell; }
+
+.sidebar {
+  background: #05090c; }
+
+.content {
+  background: #f4f5f6; }
 
 /* LAYOUT END */
 /* BUTTONS AND LINKS */
@@ -153,6 +157,16 @@ input:focus, textarea:focus, input:focus::-moz-focus-inner {
   background: #d95353;
   border-color: #75a22b; }
   .btn-deny:hover {
+    background: #ffffff;
+    color: #d95353; }
+
+.btn-logout {
+  background: #d95353;
+  text-decoration: none;
+  font-size: 0.8em;
+  border: none;
+  padding: 2px 14px 3px; }
+  .btn-logout:hover {
     background: #ffffff;
     color: #d95353; }
 
@@ -310,6 +324,30 @@ input:focus, textarea:focus, input:focus::-moz-focus-inner {
     padding: 0 25px; }
 
 /* LOGIN SCREEN END */
+/* MAIN SCREEN */
+.user {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 50px 0 80px;
+  color: #ffffff;
+  font-size: 1.6em;
+  padding: 18px 14px;
+  border-bottom: 1px solid #080f15;
+  border-top: 1px solid #080f15;
+  background: #030406; }
+  .user img {
+    float: left;
+    margin-right: 18px;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    -ms-border-radius: 100px;
+    -o-border-radius: 100px;
+    border-radius: 100px; }
+  .user p {
+    margin: 10px 0 12px; }
+
+/* MAIN SCREEN END */
 /* TABS */
 .tabs_navigation {
   border-bottom: 3px solid #e6e6e6; }

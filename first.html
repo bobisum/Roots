@@ -17,7 +17,7 @@
 		<!-- content -->
 		<div id="login">
 			<div>
-				<ul class="tabs_navigation">
+				<ul class="tabs_navigation tabs_navigation_login">
 					<li><a href="" data-tab="select-user" class="active" id="select_user_tab">Select User</a></li>
 					<li><a href="" data-tab="switch-user">Switch User</a></li>
 				</ul>
@@ -49,27 +49,31 @@
 								<div class="select-user-align"></div>
 							</li>
 						</ul>
-						<form action="" id="user_login">
+						<form action="" id="user_login" class="login_form rounded">
 							<ul class="form-list">
 								<li>
+									<div class="alert alert-error rounded">
+										<a href="" class="alert-close"></a>
+										<p>An error message goes here!</p>
+									</div>
 									<input type="hidden" id="username" name="username" value="" class="input">
 									<input type="password" placeholder="Password" class="input">
 								</li>
 								<li>
 									<input type="submit" value="Login" class="btn btn-wide btn-apply">
-									<a href="">forgot your password?</a>
+									<a href="" class="link-simple">forgot your password?</a>
 								</li>
 							</ul>
 						</form>
 					</li>
 					<li data-tab="switch-user">
-						<form action="" id="user_switch">
+						<form action="" id="user_switch" class="login_form rounded">
 							<ul class="form-list">
 								<li><input type="text" name="username" placeholder="Username" class="input"></li>
 								<li><input type="password" placeholder="Password" class="input"></li>
 								<li>
-									<input type="submit" value="Login">
-									<a href="">forgot your password?</a>
+									<input type="submit" value="Login" class="btn btn-wide btn-apply">
+									<a href="" class="link-simple">forgot your password?</a>
 								</li>
 							</ul>
 						</form>
@@ -199,6 +203,21 @@
 
 			});
 			// tabs responsive regular end
+
+			// Alert
+			$(".alert-close").click(function(e){
+				e.preventDefault();
+
+				$(this).parent().animate({opacity: "0"}, 300, function(){
+					$(this).empty();
+					$(this).css({
+							margin : '0px',
+							padding : '0px',
+							height : '0px'
+					});
+				});
+			});
+			// Alert end
 
 		});
 		</script>

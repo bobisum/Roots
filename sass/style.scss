@@ -8,8 +8,11 @@ $orange: #f1b603;
 $green: #89bc32;
 $dark_green: #75a22b;
 
-$red: #903742;
-$dark_red: #b14242;
+$red: #d95353;
+$dark_red: #983a3a;
+
+$yellow: #fdcb34;
+$dark_yellow: #f1b603;
 
 // $gray: ;
 $dark_gray: #dbdcdd;
@@ -28,6 +31,11 @@ $light_gray: #e6e6e6;
 /* MIXINS */
 @mixin master_transition {
 	@include transition-property(all);
+	@include transition-duration(0.3s);
+}
+
+@mixin alert_transition {
+	@include transition-property(height, margin, padding);
 	@include transition-duration(0.3s);
 }
 
@@ -97,7 +105,7 @@ input:focus, textarea:focus, input:focus::-moz-focus-inner {
 	@include border-radius(6px);
 }
 
-/* BUTTONS */
+/* BUTTONS AND LINKS */
 .btn {
 	@extend .rounded;
 	@include sizing;
@@ -133,10 +141,23 @@ input:focus, textarea:focus, input:focus::-moz-focus-inner {
 		color: $red;
 	}
 }
-/* BUTTONS END */
+
+.link-simple {
+	text-decoration: none;
+	font-size: 1.3em;
+	color: #ffffff;
+	float: right;
+	margin: 12px 12px 0 0;
+
+	&:hover {
+		text-decoration: underline;
+	}
+}
+/* BUTTONS AND LINKS END */
 
 /* INPUTS */
 .input {
+	@extend .rounded;
 	@include sizing;
 	@include master_transition;
 	padding: 8px;
@@ -144,7 +165,7 @@ input:focus, textarea:focus, input:focus::-moz-focus-inner {
 	text-align: center;
 	margin: 0px;
 	border: 1px solid $dark_gray;
-
+	width: 100%;
 
 	&:focus {
 		border: 1px solid $green;
@@ -160,6 +181,7 @@ input:focus, textarea:focus, input:focus::-moz-focus-inner {
 }
 /* INPUTS END */
 
+/* FORM ELEMENTS */
 .form-list {
 
 	li {
@@ -170,6 +192,50 @@ input:focus, textarea:focus, input:focus::-moz-focus-inner {
 		}
 	}
 }
+/* FORM ELEMENTS END */
+
+/* ALERTS */
+.alert {
+	@include sizing;
+	@include alert_transition;
+	width: 100%;
+	position: relative;
+	margin-bottom: 10px;
+	position: relative;
+	font-size: 1.4em;
+	padding: 15px;
+	color: #ffffff;
+	text-align: left;
+}
+
+.alert-close {
+	background: url(../images/allertsButtons.png) -4px -2px no-repeat;
+	display: block;
+	height: 26px;
+	width: 26px;
+	float: right;
+	margin: -5px -5px 0 0;
+}
+
+.alert-error {
+	background: $red;
+	border: 1px solid $dark_red;
+}
+
+.alert-success {
+	background: $green;
+	border: 1px solid $dark_green;
+}
+
+.alert-warning {
+	background: $yellow;
+	border: 1px solid $dark_yellow;
+}
+
+.alert-info {
+
+}
+/* ALERTS END */
 
 /* LOGIN SCREEN */
 #login {
@@ -186,83 +252,68 @@ input:focus, textarea:focus, input:focus::-moz-focus-inner {
 		padding-top: 100px;
 		text-align: center;
 	}
+}
 
-	.tabs_navigation {
+.login_form {
+	background: url(../images/user_menu_background.jpg);
+	width: 350px;
+	margin: 25px auto 0;
+	padding: 10px;
+	overflow: hidden;
+	@include opacity(0);
+
+	&#user_switch {
+		@include opacity(1);
+	}
+
+	.btn {
+		float: right;
+		width: 100px;
+	}
+
+}
+
+.select-user {
+	margin-top: 30px;
+
+	li {
 		display: inline-block;
-		text-align: center;
-		margin: 0 auto;
-
-		li {
-			margin: 0 25px -3px 0;
-
-			&:last-child {
-				margin-right: 0px;
-			}
-		}
+		white-space: nowrap;
+		height: 120px;
 
 		a {
-			padding: 0 25px;
-		}
-	}
-
-	.select-user {
-		margin-top: 30px;
-
-		li {
 			display: inline-block;
+			vertical-align: middle;
 			white-space: nowrap;
+			overflow: hidden;
+			@include border-radius(100px);
 			height: 120px;
+			margin: 0 25px;
+		}
 
-			a {
-				display: inline-block;
-				vertical-align: middle;
-				white-space: nowrap;
-				overflow: hidden;
-				@include border-radius(100px);
-				height: 120px;
-				margin: 0 25px;
-			}
+		.select-user-align {
+			display: inline-block;
+			vertical-align: middle;
+			height: 100%;
+		}
+	}
+}
 
-			.select-user-align {
-				display: inline-block;
-				vertical-align: middle;
-				height: 100%;
-			}
+.tabs_navigation_login {
+	display: inline-block;
+	text-align: center;
+	margin: 0 auto;
+
+	li {
+		margin: 0 25px -3px 0;
+
+		&:last-child {
+			margin-right: 0px;
 		}
 	}
 
-	form {
-		background: url(../images/user_menu_background.jpg);
-		width: 350px;
-		margin: 25px auto 0;
-		padding: 10px;
-		overflow: hidden;
-		@include opacity(0);
-
-		&#user_switch {
-			@include opacity(1);
-		}
-
-		input[type="text"], input[type="password"] {
-			width: 100%;
-		}
-
-		input[type="submit"] {
-			float: right;
-			width: 100px;
-		}
-
-		a {
-			text-decoration: none;
-			font-size: 1.3em;
-			color: #ffffff;
-			float: right;
-			margin: 12px 12px 0 0;
-
-			&:hover {
-				text-decoration: underline;
-			}
-		}
+	a {
+		padding: 0 25px;
 	}
 }
 /* LOGIN SCREEN END */

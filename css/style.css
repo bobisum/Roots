@@ -103,6 +103,22 @@ input:focus, textarea:focus, input:focus::-moz-focus-inner {
   -o-border-radius: 6px;
   border-radius: 6px; }
 
+/* LAYOUT */
+.two-columns {
+  display: table;
+  width: 100%;
+  min-height: 100%; }
+
+.sidebar {
+  width: 250px;
+  display: table-cell;
+  background: url(../images/sidebar_background.jpg) repeat; }
+
+.content {
+  display: table-cell;
+  background: green; }
+
+/* LAYOUT END */
 /* BUTTONS AND LINKS */
 .btn {
   -webkit-box-sizing: border-box;

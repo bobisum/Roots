@@ -15,70 +15,17 @@
 	<body>
 
 		<!-- content -->
-		<div id="login">
-			<div>
-				<ul class="tabs_navigation tabs_navigation_login">
-					<li><a href="" data-tab="select-user" class="active" id="select_user_tab">Select User</a></li>
-					<li><a href="" data-tab="switch-user">Switch User</a></li>
-				</ul>
-				<ul class="tabs">
-					<li data-tab="select-user" class="active_tab">
-						<ul class="select-user">
-							<li>
-								<a href="" data-username="UserOne">
-									<img src="images/loginUserOne.png" alt="UserOnePhoto">
-								</a>
-								<div class="select-user-align"></div>
-							</li>
-							<li>
-								<a href="" data-username="UserTwo">
-									<img src="images/loginUserTwo.png" alt="UserTwoPhoto">
-								</a>
-								<div class="select-user-align"></div>
-							</li>
-							<li>
-								<a href="" data-username="UserOne">
-									<img src="images/loginUserOne.png" alt="UserOnePhoto">
-								</a>
-								<div class="select-user-align"></div>
-							</li>
-							<li>
-								<a href="" data-username="UserTwo">
-									<img src="images/loginUserTwo.png" alt="UserTwoPhoto">
-								</a>
-								<div class="select-user-align"></div>
-							</li>
-						</ul>
-						<form action="" id="user_login" class="login_form rounded">
-							<ul class="form-list">
-								<li>
-									<div class="alert alert-error rounded">
-										<a href="" class="alert-close"></a>
-										<p>An error message goes here!</p>
-									</div>
-									<input type="hidden" id="username" name="username" value="" class="input">
-									<input type="password" placeholder="Password" class="input">
-								</li>
-								<li>
-									<input type="submit" value="Login" class="btn btn-wide btn-apply">
-									<a href="" class="link-simple">forgot your password?</a>
-								</li>
-							</ul>
-						</form>
-					</li>
-					<li data-tab="switch-user">
-						<form action="" id="user_switch" class="login_form rounded">
-							<ul class="form-list">
-								<li><input type="text" name="username" placeholder="Username" class="input"></li>
-								<li><input type="password" placeholder="Password" class="input"></li>
-								<li>
-									<input type="submit" value="Login" class="btn btn-wide btn-apply">
-									<a href="" class="link-simple">forgot your password?</a>
-								</li>
-							</ul>
-						</form>
-					</li>
-				</ul>
+		<div class="two-columns">
+			<div class="sidebar">
+				a
+				<div class="user">
+					<img src="" alt="">
+					<p></p>
+					<a href=""></a>
+				</div>
+			</div>
+			<div class="content">
+				a
 			</div>
 		</div>
 		<!-- content end -->
@@ -87,33 +34,6 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.js"></script>
 		<script>
 		$(document).ready(function() {
-
-			// select user
-			$("#user_login").hide();
-
-			function open_users() {
-				$(".select-user a").removeClass("active"); // remove active class on user elements
-				$(".select-user a").show(300); // show hidden users
-				$("#user_login").animate({opacity: '0', height: 'toggle'}, 500); // hide login form
-			}
-
-			function close_users(element) {
-				element.addClass("active");
-				$(".select-user a").not(element).hide(300);
-				$("#username").val($(element).data("username"));
-				$("#user_login").animate({opacity: '1', height: 'toggle'}, 500);
-			}
-
-			$(".select-user a").click(function(e){
-				e.preventDefault();
-
-				if($(this).hasClass("active")) {
-					open_users();
-				} else {
-					close_users($(this));
-				}
-			});
-			// select user end
 
 			// $("#select_user_tab").not("active").click(function() { // open users when you go back from switch user to select user tab. remove if unwanted.
 			// 	if ($(this).hasClass("active")) {

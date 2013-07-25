@@ -44,22 +44,64 @@
 				</div>
 
 				<div class="content">
+
+					<!-- CHARTS -->
 					<h2 class="section-heading">Charts</h2>
 					<div class="section"></div>
+					<!-- CHARTS END -->
+
+					<!-- TABLE -->
 					<h2 class="section-heading">Table</h2>
 					<div class="section"></div>
+					<!-- TABLE END -->
+
+					<!-- FORM -->
 					<h2 class="section-heading">Form</h2>
 					<div class="section"></div>
+					<!-- FORM END -->
+
+					<!-- CONTENT -->
 					<h2 class="section-heading">Content</h2>
 					<div class="section"></div>
+					<!-- CONTENT END -->
+
+					<!-- LEFT -->
 					<h2 class="section-heading">Left</h2>
 					<div class="section"></div>
+					<!-- LEFT END -->
+
+					<!-- RIGHT -->
 					<h2 class="section-heading">Right</h2>
 					<div class="section"></div>
+					<!-- RIGHT END -->
+
+					<!-- TABS -->
 					<h2 class="section-heading">Tabs</h2>
-					<div class="section"></div>
+					<div class="section">
+						<ul class="tabs_navigation tabs_navigation_login">
+							<li><a href="" data-tab="tab-1" class="active" id="select_user_tab">Tab 1</a></li>
+							<li><a href="" data-tab="tab-2">Tab 2</a></li>
+							<li><a href="" data-tab="tab-3">Tab 3</a></li>
+						</ul>
+						<ul class="tabs">
+							<li data-tab="tab-1" class="active_tab">
+								kjhdkjahskdjh
+							</li>
+							<li data-tab="tab-2">
+								asdasdasdasd
+							</li>
+							<li data-tab="tab-3">
+								asdasdkjhagskdjhgakjhsgd
+							</li>
+						</ul>
+					</div>
+					<!-- TABS END -->
+
+					<!-- GALLERY -->
 					<h2 class="section-heading">Gallery</h2>
 					<div class="section"></div>
+					<!-- GALLERY END -->
+
 				</div>
 			</div>
 		</div>
@@ -70,62 +112,9 @@
 		<script>
 		$(document).ready(function() {
 
-			// $("#select_user_tab").not("active").click(function() { // open users when you go back from switch user to select user tab. remove if unwanted.
-			// 	if ($(this).hasClass("active")) {
-			// 		return;
-			// 	} else {
-			// 		open_users();
-			// 	}
-			// });
-
-			// select user end
-
 			// tabs responsive slide --- uncomment this to have tabs with effects.
-			// var done = true;
+			var done = true;
 
-			// $(".tabs_navigation a").click(function(e){
-			// 	e.preventDefault();
-
-			// 	// variables
-			// 	tabs_navigation = $(this).closest(".tabs_navigation");
-			// 	tabs = tabs_navigation.siblings(".tabs");
-			// 	tab_selected = $(this).data("tab");
-			// 	tab_element = tabs.find("[data-tab='" + tab_selected + "']");
-
-
-			// 	if ($(this).hasClass("active") || !done) {
-
-			// 		return;
-
-			// 	} else {
-
-			// 		done = false;
-
-			// 		// tabs navigation
-			// 		tabs_navigation.find("a.active").removeClass("active");
-			// 		$(this).addClass("active");
-
-			// 		// tabs
-			// 		tabs.find(".active_tab").fadeOut(300);
-
-			// 		tabs.animate({
-			// 			height: tab_element.height()
-			// 		}, 300, function(){
-			// 			$(this).css( "height", "auto" );
-			// 		});
-
-			// 		tab_element.fadeIn(300, function(){
-			// 			tabs.find(".active_tab").removeClass("active_tab");
-			// 			$(this).addClass("active_tab");
-			// 			done = true;
-			// 		});
-
-			// 	};
-
-			// });
-			// tabs responsive slide end
-
-			// tabs responsive regular
 			$(".tabs_navigation a").click(function(e){
 				e.preventDefault();
 
@@ -136,29 +125,37 @@
 				tab_element = tabs.find("[data-tab='" + tab_selected + "']");
 
 
-				if ($(this).hasClass("active")) {
+				if ($(this).hasClass("active") || !done) {
 
 					return;
 
 				} else {
+
+					done = false;
 
 					// tabs navigation
 					tabs_navigation.find("a.active").removeClass("active");
 					$(this).addClass("active");
 
 					// tabs
-					tabs.find(".active_tab").css("display", "none");
+					tabs.find(".active_tab").fadeOut(300);
 
-					tabs.css("height", tab_element.height());
-					tabs.css( "height", "auto" );
+					tabs.animate({
+						height: tab_element.height()
+					}, 300, function(){
+						$(this).css( "height", "auto" );
+					});
 
-					tab_element.css("display", "block");
-					tabs.find(".active_tab").removeClass("active_tab");
-					tab_element.addClass("active_tab");
+					tab_element.fadeIn(300, function(){
+						tabs.find(".active_tab").removeClass("active_tab");
+						$(this).addClass("active_tab");
+						done = true;
+					});
+
 				};
 
 			});
-			// tabs responsive regular end
+			// tabs responsive slide end
 
 			// Alert
 			$(".alert-close").click(function(e){

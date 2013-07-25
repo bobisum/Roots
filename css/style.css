@@ -203,6 +203,27 @@ input:focus, textarea:focus, input:focus::-moz-focus-inner {
   .input:focus {
     border: 1px solid #89bc32; }
 
+.input-search {
+  width: 180px;
+  height: 100%;
+  text-align: left;
+  -webkit-box-sizing: none;
+  -moz-box-sizing: none;
+  box-sizing: none;
+  -webkit-transition-property: all;
+  -moz-transition-property: all;
+  -o-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  background: url(../images/search-white.png) no-repeat 7px 7px white;
+  padding-left: 28px;
+  font-size: 1.2em; }
+  .input-search:focus {
+    width: 250px; }
+
 .input-error {
   border: 1px solid #d95353; }
   .input-error:focus {
@@ -259,6 +280,52 @@ input:focus, textarea:focus, input:focus::-moz-focus-inner {
   border: 1px solid #f1b603; }
 
 /* ALERTS END */
+/* MENU'S */
+.navigation li {
+  border-bottom: 1px solid #080f15; }
+  .navigation li:first-child {
+    border-top: 1px solid #080f15; }
+.navigation .menu-item {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0 0 0 15px;
+  width: 100%;
+  height: 50px;
+  display: block;
+  font-size: 1.6em;
+  line-height: 3.2em;
+  color: #ffffff;
+  background: url(../images/menuArrows.png) no-repeat;
+  background-position: 222px 14px; }
+  .navigation .menu-item:hover, .navigation .menu-item.active {
+    color: #000000;
+    background-color: #f4f5f6;
+    background-position: 222px -115px; }
+
+.breadcrumb {
+  float: left; }
+  .breadcrumb li {
+    display: inline-block; }
+  .breadcrumb .breadcrumb-item {
+    -webkit-transition-property: all;
+    -moz-transition-property: all;
+    -o-transition-property: all;
+    transition-property: all;
+    -webkit-transition-duration: 0.3s;
+    -moz-transition-duration: 0.3s;
+    -o-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    border-bottom: 1px solid white;
+    border-width: 3px;
+    padding-bottom: 3px;
+    color: #000000;
+    font-size: 1.6em; }
+    .breadcrumb .breadcrumb-item:hover {
+      border-bottom: 1px solid #f1b603;
+      border-width: 3px; }
+
+/* MENU'S END */
 /* LOGIN SCREEN */
 #login {
   width: 100%;
@@ -348,27 +415,23 @@ input:focus, textarea:focus, input:focus::-moz-focus-inner {
   .user p {
     margin: 10px 0 12px; }
 
-.navigation li {
-  border-bottom: 1px solid #080f15; }
-  .navigation li:first-child {
-    border-top: 1px solid #080f15; }
-.navigation .menu-item {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  padding: 0 0 0 15px;
+.header {
   width: 100%;
   height: 50px;
-  display: block;
-  font-size: 1.6em;
-  line-height: 3.2em;
-  color: #ffffff;
-  background: url(../images/menuArrows.png) no-repeat;
-  background-position: 222px 14px; }
-  .navigation .menu-item:hover, .navigation .menu-item.active {
-    color: #000000;
-    background-color: #f4f5f6;
-    background-position: 222px -115px; }
+  background: #ffffff;
+  border-bottom: 1px solid #dbdcdd; }
+  .header .search {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 10px 10px;
+    height: 51px;
+    float: right;
+    margin: 0 25px 0 10px;
+    background: #f4f5f6;
+    border-left: 1px solid #dbdcdd;
+    border-right: 1px solid #dbdcdd;
+    border-bottom: 1px solid #f4f5f6; }
 
 /* MAIN SCREEN END */
 /* TABS */

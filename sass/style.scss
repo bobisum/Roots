@@ -24,8 +24,9 @@ $light_sidebar_color: #080f15;
 $dark_sidebar_color: #030406;
 $background_color: #f4f5f6;
 
-$font_main_color: #555555;
-$secondary_font_color: #7f7f7f;
+$font_color: #555555;
+$light_font_color: #7f7f7f;
+$dark_font_color: #182530;
 
 $light_gray: #e6e6e6;
 
@@ -125,7 +126,7 @@ input:focus, textarea:focus, input:focus::-moz-focus-inner {
 	min-height: 100%;
 }
 
-.sidebar, .content {
+.sidebar, .wrapper {
 	display: table-cell;
 	vertical-align: top;
 }
@@ -135,8 +136,40 @@ input:focus, textarea:focus, input:focus::-moz-focus-inner {
 	width: 250px;
 }
 
-.content {
+.wrapper {
 	background: $background_color;
+}
+
+.content, .section {
+	@include sizing;
+	width: 100%;
+}
+
+.content {
+	padding: 25px;
+}
+
+.section {
+	@extend .rounded;
+	padding: 20px;
+	background: #ffffff;
+	@include border( '', $dark_gray);
+	margin-bottom: 50px;
+
+	&:last-child {
+		margin-bottom: 0px;
+	}
+}
+
+.section-heading {
+	font-size: 3em;
+	padding: 0 10px 10px 0;
+	margin-bottom: 25px;
+	@include border(-bottom, $orange);
+	border-width: 3px;
+	color: $dark_font_color;
+	display: inline-block;
+	font-weight: bold;
 }
 /* LAYOUT END */
 
@@ -508,7 +541,7 @@ input:focus, textarea:focus, input:focus::-moz-focus-inner {
 
 	a {
 		text-decoration: none;
-		color: $secondary_font_color;
+		color: $light_font_color;
 		border-bottom: 3px solid transparent;
 		font-size: 1.8em;
 		line-height: 2.5em;
@@ -518,7 +551,7 @@ input:focus, textarea:focus, input:focus::-moz-focus-inner {
 		@include master_transition;
 
 		&.active, &:hover {
-			color: $font_main_color;
+			color: $font_color;
 			border-bottom: 3px solid $orange;
 		}
 	}

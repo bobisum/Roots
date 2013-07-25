@@ -92,7 +92,7 @@ input:focus, textarea:focus, input:focus::-moz-focus-inner {
   border: none; }
 
 /* RESETS END */
-.rounded, .btn, .input {
+.rounded, .section, .btn, .input {
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
@@ -112,7 +112,7 @@ input:focus, textarea:focus, input:focus::-moz-focus-inner {
   width: 100%;
   min-height: 100%; }
 
-.sidebar, .content {
+.sidebar, .wrapper {
   display: table-cell;
   vertical-align: top; }
 
@@ -120,8 +120,35 @@ input:focus, textarea:focus, input:focus::-moz-focus-inner {
   background: #05090c;
   width: 250px; }
 
-.content {
+.wrapper {
   background: #f4f5f6; }
+
+.content, .section {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%; }
+
+.content {
+  padding: 25px; }
+
+.section {
+  padding: 20px;
+  background: #ffffff;
+  border: 1px solid #dbdcdd;
+  margin-bottom: 50px; }
+  .section:last-child {
+    margin-bottom: 0px; }
+
+.section-heading {
+  font-size: 3em;
+  padding: 0 10px 10px 0;
+  margin-bottom: 25px;
+  border-bottom: 1px solid #f1b603;
+  border-width: 3px;
+  color: #182530;
+  display: inline-block;
+  font-weight: bold; }
 
 /* LAYOUT END */
 /* BUTTONS AND LINKS */

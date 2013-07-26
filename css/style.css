@@ -46,6 +46,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   display: block; }
 
 /* VARIABLES */
+/* defaults */
+/* defaults end */
 /* VARIABLES END */
 /* MIXINS */
 /* MIXINS END */
@@ -144,8 +146,7 @@ input:focus, textarea:focus, input:focus::-moz-focus-inner {
   font-size: 3em;
   padding: 0 10px 10px 0;
   margin-bottom: 25px;
-  border-bottom: 1px solid #f1b603;
-  border-width: 3px;
+  border-bottom: 3px solid #f1b603;
   color: #182530;
   display: inline-block;
   font-weight: bold; }

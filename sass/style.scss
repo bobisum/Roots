@@ -2,6 +2,10 @@
 @import "compass/css3";
 
 /* VARIABLES */
+/* defaults */
+$default_border_width: 1 !default;
+$default_border_color: #dbdcdd;
+/* defaults end */
 
 $orange: #f1b603;
 
@@ -29,9 +33,8 @@ $light_font_color: #7f7f7f;
 $dark_font_color: #182530;
 
 $light_gray: #e6e6e6;
-
-
 /* VARIABLES END */
+
 
 
 /* MIXINS */
@@ -51,8 +54,31 @@ $light_gray: #e6e6e6;
 	@include transition-delay(1s);
 }
 
-@mixin border($border-side, $border-color) {
-	border#{$border-side}: 1px solid #{$border-color};
+@mixin border($list:'') {
+	$sides: '';
+	$width: $default_border_width;
+	$color: $default_border_color;
+
+	@for $i from 1 through (length($list)) {
+
+		@if type-of(nth($list, $i)) == number {
+			$width: #{nth($list, $i)};
+		} @else if type-of(nth($list, $i)) == color {
+			$color: #{nth($list, $i)};
+		} @else if type-of(nth($list, $i)) == string {
+			$sides: append($sides, #{nth($list, $i)}, space);
+		}
+	}
+
+	@if length($sides) > 1 {
+		@for $i from 2 through (length($sides)) {
+			border#{nth($sides, $i)}:#{$width}px solid #{$color};
+		}
+	} @else {
+		@for $i from 1 through (length($sides)) {
+			border#{nth($sides, $i)}:#{$width}px solid #{$color};
+		}
+	}
 }
 
 @mixin sizing {
@@ -153,7 +179,7 @@ input:focus, textarea:focus, input:focus::-moz-focus-inner {
 	@extend .rounded;
 	padding: 20px;
 	background: #ffffff;
-	@include border( '', $dark_gray);
+	@include border($dark_gray);
 	margin-bottom: 50px;
 
 	&:last-child {
@@ -165,8 +191,7 @@ input:focus, textarea:focus, input:focus::-moz-focus-inner {
 	font-size: 3em;
 	padding: 0 10px 10px 0;
 	margin-bottom: 25px;
-	@include border(-bottom, $orange);
-	border-width: 3px;
+	@include border(-bottom 3 $orange);
 	color: $dark_font_color;
 	display: inline-block;
 	font-weight: bold;
@@ -245,11 +270,11 @@ input:focus, textarea:focus, input:focus::-moz-focus-inner {
 	font-size: 1.4em;
 	text-align: center;
 	margin: 0px;
-	border: 1px solid $dark_gray;
+	@include border();
 	width: 100%;
 
 	&:focus {
-		border: 1px solid $green;
+		@include border($green);
 	}
 }
 
@@ -337,10 +362,10 @@ input:focus, textarea:focus, input:focus::-moz-focus-inner {
 .navigation {
 
 	li {
-		@include border(-bottom, $light_sidebar_color);
+		@include border(-bottom $light_sidebar_color);
 
 		&:first-child {
-			@include border(-top, $light_sidebar_color);
+			@include border(-top $light_sidebar_color);
 		}
 	}
 	
@@ -385,14 +410,14 @@ input:focus, textarea:focus, input:focus::-moz-focus-inner {
 
 	.breadcrumb-item {
 		@include master_transition;
-		@include border(-bottom, #ffffff);
+		@include border(-bottom #ffffff);
 		border-width: 3px;
 		padding-bottom: 3px;
 		color: #000000;
 		font-size: 1.6em;
 		
 		&:hover, &.active {
-			@include border(-bottom, $orange);
+			@include border(-bottom $orange);
 			border-width: 2px;
 		}
 	}
@@ -508,7 +533,7 @@ input:focus, textarea:focus, input:focus::-moz-focus-inner {
 	width: 100%;
 	height: 50px;
 	background: #ffffff;
-	@include border(-bottom, $dark_gray);
+	@include border(-bottom);
 
 	.search {
 		@include sizing;
@@ -517,9 +542,9 @@ input:focus, textarea:focus, input:focus::-moz-focus-inner {
 		float: right;
 		margin: 0 25px 0 10px;
 		background: $background_color;
-		@include border(-left, $dark_gray);
-		@include border(-right, $dark_gray);
-		@include border(-bottom, $background_color);
+		@include border(-left);
+		@include border(-right);
+		@include border(-bottom $background_color);
 
 		// input {
 		// 	width: 150px;

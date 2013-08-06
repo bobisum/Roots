@@ -174,7 +174,7 @@
 
 			// Breadcrumbs
 			var breadcrumbs = $(".drop-crumbs");
-			breadcrumbs.append('<li><a href="/user/messages"><span class="tab">Message Center</span></a></li>');
+			$("li:eq(0)", breadcrumbs).before('<li class="breadcrumb-mobile-first"><a href="/user/messages" class="breadcrumb-item">Go to...</a></li>');
 			// Breadcrumbs end
 
 		});

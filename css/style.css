@@ -332,7 +332,8 @@ input:focus, textarea:focus, input:focus::-moz-focus-inner {
     background-position: 222px -115px; }
 
 .breadcrumb {
-  float: left; }
+  float: left;
+  margin-left: 10px; }
   .breadcrumb li {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -341,8 +342,8 @@ input:focus, textarea:focus, input:focus::-moz-focus-inner {
     background: url(../images/breadcrumbsArrow.png) right 0 no-repeat;
     padding: 17px 45px 17px 10px;
     height: 50px; }
-    .breadcrumb li:first-child {
-      padding-left: 20px; }
+    .breadcrumb li.breadcrumb-mobile-first {
+      display: none; }
     .breadcrumb li:last-child {
       background: none; }
   .breadcrumb .breadcrumb-item {

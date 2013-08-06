@@ -54,8 +54,9 @@ $light_gray: #e6e6e6;
 	@include transition-delay(1s);
 }
 
-@mixin border($list:'') {
-	$sides: '';
+@mixin border($list:()) {
+	// $sides: '';
+	$sides: ();
 	$width: $default_border_width;
 	$color: $default_border_color;
 
@@ -70,14 +71,12 @@ $light_gray: #e6e6e6;
 		}
 	}
 
-	@if length($sides) > 1 {
-		@for $i from 2 through (length($sides)) {
+	@if length($sides) > 0 {
+		@for $i from 1 through (length($sides)) {
 			border-#{nth($sides, $i)}:#{$width}px solid #{$color};
 		}
 	} @else {
-		@for $i from 1 through (length($sides)) {
-			border#{nth($sides, $i)}:#{$width}px solid #{$color};
-		}
+		border:#{$width}px solid #{$color};
 	}
 }
 

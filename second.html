@@ -33,7 +33,7 @@
 			</div>
 			<div class="wrapper">
 				<div class="header">
-					<ul class="breadcrumb">
+					<ul class="breadcrumb drop-crumbs">
 						<li><a href="" class="breadcrumb-item">First</a></li>
 						<li><a href="" class="breadcrumb-item">Second</a></li>
 						<li><a href="" class="breadcrumb-item active">Third</a></li>
@@ -171,6 +171,11 @@
 				});
 			});
 			// Alert end
+
+			// Breadcrumbs
+			var breadcrumbs = $(".drop-crumbs");
+			breadcrumbs.append('<li><a href="/user/messages"><span class="tab">Message Center</span></a></li>');
+			// Breadcrumbs end
 
 		});
 		</script>

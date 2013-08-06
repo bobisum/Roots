@@ -226,7 +226,7 @@ input:focus, textarea:focus, input:focus::-moz-focus-inner {
   font-size: 1.4em;
   text-align: center;
   margin: 0px;
-  border-: 1px solid #dbdcdd;
+  border: 1px solid #dbdcdd;
   width: 100%; }
   .input:focus {
     border: 1px solid #89bc32; }

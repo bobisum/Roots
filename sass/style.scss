@@ -72,7 +72,7 @@ $light_gray: #e6e6e6;
 
 	@if length($sides) > 1 {
 		@for $i from 2 through (length($sides)) {
-			border#{nth($sides, $i)}:#{$width}px solid #{$color};
+			border-#{nth($sides, $i)}:#{$width}px solid #{$color};
 		}
 	} @else {
 		@for $i from 1 through (length($sides)) {
@@ -191,7 +191,7 @@ input:focus, textarea:focus, input:focus::-moz-focus-inner {
 	font-size: 3em;
 	padding: 0 10px 10px 0;
 	margin-bottom: 25px;
-	@include border(-bottom 3 $orange);
+	@include border(bottom 3 $orange);
 	color: $dark_font_color;
 	display: inline-block;
 	font-weight: bold;
@@ -362,10 +362,10 @@ input:focus, textarea:focus, input:focus::-moz-focus-inner {
 .navigation {
 
 	li {
-		@include border(-bottom $light_sidebar_color);
+		@include border(bottom $light_sidebar_color);
 
 		&:first-child {
-			@include border(-top $light_sidebar_color);
+			@include border(top $light_sidebar_color);
 		}
 	}
 	
@@ -410,14 +410,14 @@ input:focus, textarea:focus, input:focus::-moz-focus-inner {
 
 	.breadcrumb-item {
 		@include master_transition;
-		@include border(-bottom #ffffff);
+		@include border(bottom #ffffff);
 		border-width: 3px;
 		padding-bottom: 3px;
 		color: #000000;
 		font-size: 1.6em;
 		
 		&:hover, &.active {
-			@include border(-bottom $orange);
+			@include border(bottom $orange);
 			border-width: 2px;
 		}
 	}
@@ -533,7 +533,7 @@ input:focus, textarea:focus, input:focus::-moz-focus-inner {
 	width: 100%;
 	height: 50px;
 	background: #ffffff;
-	@include border(-bottom);
+	@include border(bottom);
 
 	.search {
 		@include sizing;
@@ -542,9 +542,9 @@ input:focus, textarea:focus, input:focus::-moz-focus-inner {
 		float: right;
 		margin: 0 25px 0 10px;
 		background: $background_color;
-		@include border(-left);
-		@include border(-right);
-		@include border(-bottom $background_color);
+		@include border(left);
+		@include border(right);
+		@include border(bottom $background_color);
 
 		// input {
 		// 	width: 150px;

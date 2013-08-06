@@ -55,7 +55,6 @@ $light_gray: #e6e6e6;
 }
 
 @mixin border($list:()) {
-	// $sides: '';
 	$sides: ();
 	$width: $default_border_width;
 	$color: $default_border_color;

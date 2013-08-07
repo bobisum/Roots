@@ -331,6 +331,7 @@ input:focus, textarea:focus, input:focus::-moz-focus-inner {
     background-color: #f4f5f6;
     background-position: 222px -115px; }
 
+/* breadcrumbs */
 .breadcrumb {
   float: left;
   margin-left: 10px; }
@@ -364,6 +365,36 @@ input:focus, textarea:focus, input:focus::-moz-focus-inner {
       border-bottom: 1px solid #f1b603;
       border-width: 2px; }
 
+/* breadcrumbs end */
+/* dropcrumb */
+.breadcrumb-wrapper {
+  position: relative;
+  display: inline-block;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+.breadcrumb-dropdown {
+  display: none; }
+
+@media only screen and (max-width: 640px), only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+  .breadcrumb {
+    position: absolute;
+    margin: 0;
+    top: 30px; }
+    .breadcrumb li {
+      width: 100%; }
+
+  .breadcrumb-wrapper {
+    width: 100%;
+    padding: 0 20px;
+    height: 50px; }
+
+  .breadcrumb-dropdown {
+    display: block;
+    width: 100%;
+    height: 30px; } }
+/* dropcrumb end */
 /* MENU'S END */
 /* LOGIN SCREEN */
 #login {

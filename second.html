@@ -109,6 +109,7 @@
 
 		<!-- scripts -->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.js"></script>
+		<script src="js/drop-crumbs.js"></script>
 		<script>
 		$(document).ready(function() {
 
@@ -173,8 +174,10 @@
 			// Alert end
 
 			// Breadcrumbs
-			var breadcrumbs = $(".drop-crumbs");
-			$("li:eq(0)", breadcrumbs).before('<li class="breadcrumb-mobile-first"><a href="/user/messages" class="breadcrumb-item">Go to...</a></li>');
+			$(".drop-crumbs").drop_crumbs({
+				_wrapper_class: 'bobi',
+				_dropdown_class: 'testwa'
+			});
 			// Breadcrumbs end
 
 		});

@@ -387,6 +387,7 @@ input:focus, textarea:focus, input:focus::-moz-focus-inner {
 	}
 }
 
+/* breadcrumbs */
 .breadcrumb {
 	float: left;
 	margin-left: 10px;
@@ -421,6 +422,47 @@ input:focus, textarea:focus, input:focus::-moz-focus-inner {
 		}
 	}
 }
+/* breadcrumbs end */
+
+/* dropcrumb */
+$dropcrumb_dropdown_hight: 30px;
+
+.breadcrumb-wrapper {
+	position: relative;
+	display: inline-block;
+	@include sizing;
+}
+
+.breadcrumb-dropdown {
+	display: none;
+}
+
+@media only screen and (max-width: 640px), only screen and (-webkit-min-device-pixel-ratio : 1.5), only screen and (min-device-pixel-ratio : 1.5){
+
+	.breadcrumb {
+		position: absolute;
+		// display: none;
+		margin: 0;
+		top: $dropcrumb_dropdown_hight;
+
+		li {
+			width: 100%;
+		}
+	}
+
+	.breadcrumb-wrapper {
+		width: 100%;
+		padding: 0 20px;
+		height: 50px;
+	}
+
+	.breadcrumb-dropdown {
+		display: block;
+		width: 100%;
+		height: $dropcrumb_dropdown_hight;
+	}
+}
+/* dropcrumb end */
 
 /* MENU'S END */
 

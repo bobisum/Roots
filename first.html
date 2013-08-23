@@ -181,11 +181,7 @@
 				tab_element = tabs.find("[data-tab='" + tab_selected + "']");
 
 
-				if ($(this).hasClass("active")) {
-
-					return;
-
-				} else {
+				if ($(this).hasClass("active") == false) {
 
 					// tabs navigation
 					tabs_navigation.find("a.active").removeClass("active");
@@ -200,7 +196,7 @@
 					tab_element.css("display", "block");
 					tabs.find(".active_tab").removeClass("active_tab");
 					tab_element.addClass("active_tab");
-				};
+				}
 
 			});
 			// tabs responsive regular end

@@ -54,6 +54,23 @@ $light_gray: #e6e6e6;
 	@include transition-delay(1s);
 }
 
+@mixin placeholder($color){
+	&::-webkit-input-placeholder {
+		color: $color;
+	}
+	&:-moz-placeholder { /* Firefox 18- */
+		color: $color;
+		opacity: 1;
+	}
+	&::-moz-placeholder { /* Firefox 19+ */
+		color: $color;
+		opacity: 1;
+	}
+	&:-ms-input-placeholder {
+		color: $color;
+	}
+}
+
 @mixin border($list:()) {
 	$sides: ();
 	$width: $default_border_width;

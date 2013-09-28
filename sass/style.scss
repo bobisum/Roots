@@ -20,6 +20,7 @@ $dark_red: #983a3a;
 $yellow: #fdcb34;
 $dark_yellow: #f1b603;
 
+$light_gray: #e6e6e6;
 // $gray: ;
 $dark_gray: #dbdcdd;
 
@@ -32,7 +33,7 @@ $font_color: #555555;
 $light_font_color: #7f7f7f;
 $dark_font_color: #182530;
 
-$light_gray: #e6e6e6;
+$arrow_color: #7a7a7b;
 /* VARIABLES END */
 
 
@@ -98,6 +99,23 @@ $light_gray: #e6e6e6;
 
 @mixin sizing {
 	@include box-sizing(border-box);
+}
+
+$prefixes: ("-webkit-","-moz-", "-o-", "");
+@mixin selection($color, $background) {
+	@each $prefix in $prefixes {
+		::#{$prefix}selection {
+			color: $color;
+			background: $background;
+		}
+	}
+}
+
+@mixin user-select($select) {
+	$select: unquote($select);
+	@include experimental(user-select, $select,
+		-moz, -webkit, not -o, not -ms, -khtml, official
+	);
 }
 /* MIXINS END */
 
@@ -451,14 +469,52 @@ $dropcrumb_dropdown_hight: 30px;
 }
 
 .breadcrumb-dropdown {
+	background: $background_color;
+	width: 100%;
+	height: $dropcrumb_dropdown_hight;
+	@include border();
+	@include border-radius(4px);
+	@include sizing;
+	position: relative;
+	padding: 0 0 0 12px;
+	font-size: 1.4em;
+	line-height: 2em;
+	margin: 10px 0;
+	color: $light_font_color;
 	display: none;
+
+	&:hover, &.active {
+		color: $font_color;
+	}
+
+	&:after {
+		position: absolute;
+		content: "";
+		width: 0px;
+		height: 0px;
+		background: transparent;
+		@include border(5);
+		@include master_transition;
+		@include transform-origin(5px, 2px);
+		border-color: $arrow_color transparent transparent transparent;
+		top: 12px;
+		right: 12px;
+	}
+
+	&.active:after {
+		@include rotate(180deg);
+	}
+
+	&.active + .breadcrumb {
+		display: block;
+	}
 }
 
 @media only screen and (max-width: 640px), only screen and (-webkit-min-device-pixel-ratio : 1.5), only screen and (min-device-pixel-ratio : 1.5){
 
 	.breadcrumb {
 		position: absolute;
-		// display: none;
+		display: none;
 		margin: 0;
 		top: $dropcrumb_dropdown_hight;
 
@@ -475,8 +531,6 @@ $dropcrumb_dropdown_hight: 30px;
 
 	.breadcrumb-dropdown {
 		display: block;
-		width: 100%;
-		height: $dropcrumb_dropdown_hight;
 	}
 }
 /* dropcrumb end */

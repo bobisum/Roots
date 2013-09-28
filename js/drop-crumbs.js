@@ -25,9 +25,19 @@ jQuery(document).ready(function($) {
 
 				var dropdown = breadcrumbs.siblings('a');
 
+				// Create needed elements
 				function wrap_breadcrumbs(breadcrumbs){
 					breadcrumbs.wrap('<div class="' + options._wrapper + " " + options._wrapper_class + '">').before('<a href="" class="' + options._dropdown + " " + options._dropdown_class + '">' + options._dropdown_content + '</a>');
 				}
+
+				// Drop the dropdown
+				dropdown.click(function(e){
+					e.preventDefault();
+					$this = $(this);
+
+					$this.toggleClass('active');
+
+				});
 
 			});
 		}

@@ -450,6 +450,7 @@ input:focus, textarea:focus, input:focus::-moz-focus-inner {
 		padding-bottom: 3px;
 		color: #000000;
 		font-size: 1.6em;
+		display: block;
 		
 		&:hover, &.active {
 			@include border(bottom $orange);
@@ -457,18 +458,37 @@ input:focus, textarea:focus, input:focus::-moz-focus-inner {
 		}
 	}
 }
+
+@media only screen and (max-width: 640px), only screen and (-webkit-min-device-pixel-ratio : 1.5), only screen and (min-device-pixel-ratio : 1.5){ 
+	.breadcrumb {
+		margin: 0;
+
+		li {
+			width: 100%;
+			height: auto;
+			padding: 0px;
+			background: transparent;
+		}
+	}
+
+	.breadcrumb-item {
+		padding: 5px;
+		background: $background_color;	
+		width: 100%;
+	}
+}
 /* breadcrumbs end */
 
 /* dropcrumb */
 $dropcrumb_dropdown_hight: 30px;
 
-.breadcrumb-wrapper {
+.drop-crumbs-wrapper {
 	position: relative;
 	display: inline-block;
 	@include sizing;
 }
 
-.breadcrumb-dropdown {
+.drop-crumbs-button {
 	background: $background_color;
 	width: 100%;
 	height: $dropcrumb_dropdown_hight;
@@ -479,7 +499,6 @@ $dropcrumb_dropdown_hight: 30px;
 	padding: 0 0 0 12px;
 	font-size: 1.4em;
 	line-height: 2em;
-	margin: 10px 0;
 	color: $light_font_color;
 	display: none;
 
@@ -505,31 +524,27 @@ $dropcrumb_dropdown_hight: 30px;
 		@include rotate(180deg);
 	}
 
-	&.active + .breadcrumb {
+	&.active + .drop-crumbs-dropdown {
 		display: block;
 	}
 }
 
 @media only screen and (max-width: 640px), only screen and (-webkit-min-device-pixel-ratio : 1.5), only screen and (min-device-pixel-ratio : 1.5){
 
-	.breadcrumb {
+	.drop-crumbs-dropdown {
 		position: absolute;
 		display: none;
-		margin: 0;
 		top: $dropcrumb_dropdown_hight;
-
-		li {
-			width: 100%;
-		}
 	}
 
-	.breadcrumb-wrapper {
+	.drop-crumbs-wrapper {
 		width: 100%;
 		padding: 0 20px;
-		height: 50px;
+		height: $dropcrumb_dropdown_hight;
+		margin: 10px 0;
 	}
 
-	.breadcrumb-dropdown {
+	.drop-crumbs-button {
 		display: block;
 	}
 }

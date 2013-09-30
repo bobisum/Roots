@@ -2,11 +2,11 @@ jQuery(document).ready(function($) {
 
 	// Variables
 	var defaults = {
-		_breadcrumb: 'breadcrumb',
-		_wrapper: 'breadcrumb-wrapper',
+		_button: 'drop-crumbs-button',
+		_button_class: '',
+		_wrapper: 'drop-crumbs-wrapper',
 		_wrapper_class: '',
-		_dropdown: 'breadcrumb-dropdown',
-		_dropdown_class: '',
+		_dropdown: 'drop-crumbs-dropdown',
 		_dropdown_content: 'Go to...'
 	};
 
@@ -20,14 +20,15 @@ jQuery(document).ready(function($) {
 
 			return this.each(function(){
 
-				var breadcrumbs = $(this);
-				wrap_breadcrumbs(breadcrumbs);
+				var dropcrumbs = $(this);
+				dropcrumbs.addClass(options._dropdown);
+				wrap_breadcrumbs(dropcrumbs);
 
-				var dropdown = breadcrumbs.siblings('a');
+				var dropdown = dropcrumbs.siblings('a');
 
 				// Create needed elements
-				function wrap_breadcrumbs(breadcrumbs){
-					breadcrumbs.wrap('<div class="' + options._wrapper + " " + options._wrapper_class + '">').before('<a href="" class="' + options._dropdown + " " + options._dropdown_class + '">' + options._dropdown_content + '</a>');
+				function wrap_breadcrumbs(dropcrumbs){
+					dropcrumbs.wrap('<div class="' + options._wrapper + " " + options._wrapper_class + '">').before('<a href="" class="' + options._button + " " + options._button_class + '">' + options._dropdown_content + '</a>');
 				}
 
 				// Drop the dropdown
@@ -36,7 +37,6 @@ jQuery(document).ready(function($) {
 					$this = $(this);
 
 					$this.toggleClass('active');
-
 				});
 
 			});
